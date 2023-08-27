@@ -55,7 +55,7 @@
     #DNSPort = 9053;
     #UseBridges = true;
     #ClientTransportPlugin = "obfs4 exec ${pkgs.obfs4}/bin/obfs4proxy";
-    #Bridge = "[bridge-address-here]";
+    #Bridge = "obfs4 45.145.95.6:27015 C5B7CD6946FF10C5B3E89691A7D3F2C122D2117C cert=TD7PbUO0/0k6xYHMPW3vJxICfkMZNdkRrb63Zhl5j9dW3iRGiCx0A7mPhe5T2EDzQ35+Zw iat-mode=0";
   };
 
   services.privoxy = {
@@ -73,11 +73,10 @@
 
   # Set environment variables
   environment.sessionVariables = {
-    # VSCode under wayland
-    NIXOS_OZONE_WL = "1"; 
-    # Firefox wayland
-    MOZ_ENABLE_WAYLAND = "1";
+    NIXOS_OZONE_WL = "1"; # VSCode under wayland 
+    MOZ_ENABLE_WAYLAND = "1"; # Firefox wayland
     EDITOR = "vim";
+    DISABLE_QT5_COMPAT = "1"; # Anki QT6 config
   };
 
   # Select internationalisation properties.
@@ -151,7 +150,7 @@
     TEMPLATES=templates
     VIDEOS=videos
   '';
-
+  
   # Define a user account
   users.users.matty = {
     isNormalUser = true;
@@ -171,7 +170,8 @@
       libreoffice
       hunspell # spell check for libre office
       obsidian
-      git
+      jetbrains.rider
+      dotnet-sdk_7
     ]) ++ (with pkgs.gnome; [
       gnome-tweaks
       gucharmap
@@ -181,7 +181,9 @@
       unite
     ]);
   };
+  
 
+ 
   # Enable automatic login for the user.
   #services.xserver.displayManager.autoLogin = { enable = true; user = "matty"; };
 
@@ -190,10 +192,19 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  
+
+  # Setup gpg  
+  services.pcscd.enable = true;
+  programs.gnupg.agent = {
+     enable = true;
+     #pinentryFlavor = "gtk2";
+     #enableSSHSupport = true;
+  };
+
+  # System packages
   environment.systemPackages = (with pkgs; [
     vim
-    wget
+    git
   ]);
 
   # Fonts
@@ -246,8 +257,8 @@
     path = "/home/matty/public";
     browseable = "yes";
     "read only" = "no";
-    "public" = "yes";
-    "writable" = "yes";
+    public = "yes";
+    writable = "yes";
     "guest ok" = "yes";
     "guest only" = "yes";
     "force user" = "matty";
