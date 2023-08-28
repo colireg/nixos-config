@@ -182,8 +182,8 @@
     ]);
   };
   
+  nix.settings.trusted-users = [ "matty" ];
 
- 
   # Enable automatic login for the user.
   #services.xserver.displayManager.autoLogin = { enable = true; user = "matty"; };
 
@@ -266,7 +266,8 @@
   };
 
   # Copies the configuration file to /run/current-system/configuration.nix
-  system.copySystemConfiguration = true;
+  # doesn't work with flakes
+  #system.copySystemConfiguration = true;
 
   system.stateVersion = "23.05";
 }
