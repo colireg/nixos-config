@@ -19,27 +19,16 @@
   home.packages = with pkgs; [
     firefox
     vlc
-    papirus-icon-theme
     anki
     tor-browser-bundle-bin
     vscode-fhs
-    foliate # EPUB reader
-    gnome-epub-thumbnailer # EPUB thumbnailer for Nautilous
     qbittorrent
-    virt-manager
     libreoffice
     hunspell # Spell check for LibreOffice
     obsidian
     jetbrains.rider
     dotnet-sdk_7
-    gnome.gnome-tweaks
-    gnome.gucharmap
-    gnomeExtensions.just-perfection
-    gnomeExtensions.rounded-window-corners
-    gnomeExtensions.unite
   ];
-
-
 
   home.stateVersion = "23.05";
   programs.home-manager.enable = true;

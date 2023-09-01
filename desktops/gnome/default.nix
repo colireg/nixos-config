@@ -20,6 +20,18 @@
     atomix # puzzle game
   ]);
 
+  environment.systemPackages = (with pkgs; [
+    papirus-icon-theme
+    foliate # EPUB reader
+    gnome-epub-thumbnailer # EPUB thumbnailer for Nautilous
+    gnome.gnome-tweaks
+    gnome.gucharmap # Character map
+  ]) ++ (with pkgs.gnomeExtensions; [
+    just-perfection
+    rounded-window-corners
+    unite
+  ]);
+
   # Enable automatic login for the user.
   #services.xserver.displayManager.autoLogin = { enable = true; user = "${config.home.username}"; };
 

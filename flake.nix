@@ -2,7 +2,6 @@
   description = "Matty's NixOS Flake ❄️";
 
   nixConfig = {
-    experimental-features = [ "nix-command" "flakes" ];
     # Use the Chinese mirror
     substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
     # Nix community's cache server
@@ -24,6 +23,7 @@
         ./modules
         ./programs
         ./shared
+        ./desktops/gnome
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
@@ -32,5 +32,4 @@
       ];
     };
   };
-
 }

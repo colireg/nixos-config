@@ -34,11 +34,10 @@
     libinput.enable = true; 
   };
 
-  # Enable QEMU
+  # Enable virtualization
   virtualisation.libvirtd.enable = true;
   programs.dconf.enable = true;
-
-  # Enable Docker
+  environment.systemPackages = with pkgs; [ virt-manager ];
   virtualisation.docker.enable = true;
 
   sound.enable = true;
@@ -51,7 +50,6 @@
     pulse.enable = true;
   };
 
-  # Define a user account
   users.users.matty = {
     isNormalUser = true;
     description = "Matty";

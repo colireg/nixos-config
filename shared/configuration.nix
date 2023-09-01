@@ -3,6 +3,8 @@
 {
   nixpkgs.config.allowUnfree = true;
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   environment.sessionVariables = {
     EDITOR = "vim";
   };
@@ -25,8 +27,8 @@
      #enableSSHSupport = true;
   };
 
-  environment.systemPackages = (with pkgs; [
+  environment.systemPackages = with pkgs; [
     vim
     git
-  ]);
+  ];
 }
