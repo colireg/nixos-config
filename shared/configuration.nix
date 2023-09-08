@@ -27,6 +27,22 @@
      #enableSSHSupport = true;
   };
 
+  # Exclude gnome bloat
+  environment.gnome.excludePackages = (with pkgs; [
+    gnome-tour
+  ]) ++ (with pkgs.gnome; [
+    cheese # webcam tool
+    gnome-music
+    gnome-maps
+    gnome-characters
+    epiphany # web browser
+    totem # video player
+    tali # poker game
+    iagno # go game
+    hitori # sudoku game
+    atomix # puzzle game
+  ]);
+
   environment.systemPackages = with pkgs; [
     vim
     git

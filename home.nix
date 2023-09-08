@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./desktops/gnome/dconf.nix
+  ];
+
   home.username = "matty";
   home.homeDirectory = "/home/matty";
   
@@ -28,6 +32,7 @@
     obsidian
     jetbrains.rider
     dotnet-sdk_7
+    jcal # calendar
   ];
 
   home.stateVersion = "23.05";

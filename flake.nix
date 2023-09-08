@@ -18,15 +18,17 @@
   outputs = inputs@{ nixpkgs, home-manager, ...} : {
     nixosConfigurations.apollo = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      specialArgs = { inherit inputs; };
       modules = [
         ./machines/apollo
         ./modules
-        ./programs
         ./shared
+        ./programs
         ./desktops/gnome
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = { inherit inputs; }; 
           home-manager.users.matty = import ./home.nix;
         }
       ];
