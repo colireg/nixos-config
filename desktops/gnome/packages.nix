@@ -22,6 +22,7 @@
     gnome-epub-thumbnailer # EPUB thumbnailer for Nautilous
     gnome.gnome-tweaks
     gnome.gucharmap # Character map
+    gnome-solanum # Pomodoro timer
   ]) ++ (with pkgs.gnomeExtensions; [
     just-perfection
     rounded-window-corners

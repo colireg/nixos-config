@@ -53,7 +53,7 @@
   users.users.matty = {
     isNormalUser = true;
     description = "Matty";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "docker" "tor" ];
   };
 
   nix.settings.trusted-users = [ "matty" ];

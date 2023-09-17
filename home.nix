@@ -24,15 +24,18 @@
     firefox
     vlc
     anki
-    tor-browser-bundle-bin
     vscode-fhs
     qbittorrent
     libreoffice
     hunspell # Spell check for LibreOffice
     obsidian
-    jetbrains.rider
+    nodejs
     dotnet-sdk_7
+    python3
     jcal # calendar
+    gimp
+    discord
+    telegram-desktop
   ];
 
   home.stateVersion = "23.05";
