@@ -36,6 +36,8 @@
     gimp
     discord
     telegram-desktop
+    wget
+    newsflash
   ];
 
   home.stateVersion = "23.05";
