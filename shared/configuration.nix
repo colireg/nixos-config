@@ -47,4 +47,16 @@
     vim
     git
   ];
+
+  # Get completion for system packages for zsh
+  environment.pathsToLink = [ "/share/zsh" ];
+
+  programs.zsh = {
+    enable = true;
+    syntaxHighlighting.enable = true;
+    autosuggestions.enable = true;
+  };
+
+  environment.shells = with pkgs; [ zsh ];
+  users.defaultUserShell = pkgs.zsh;
 }

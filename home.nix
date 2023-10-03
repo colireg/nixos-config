@@ -19,6 +19,13 @@
     userName = "matty";
     userEmail = "mattyraud@gmail.com";
   };
+
+  programs.zsh.enable = true;
+  programs.zsh.initExtra = ''
+    zstyle ':completion:*' menu select
+    zstyle ':completion::complete:*' gain-privileges 1
+    prompt off
+  '';
   
   home.packages = with pkgs; [
     firefox
@@ -38,6 +45,7 @@
     telegram-desktop
     wget
     newsflash
+    openssh
   ];
 
   home.stateVersion = "23.05";
