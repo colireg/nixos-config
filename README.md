@@ -1,2 +1,2 @@
-# NixOS Config
+# NixOS Config ❄️
 My personal NixOS configuration files 
