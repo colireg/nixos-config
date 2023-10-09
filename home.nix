@@ -24,7 +24,7 @@
   programs.zsh.initExtra = ''
     zstyle ':completion:*' menu select
     zstyle ':completion::complete:*' gain-privileges 1
-    prompt off
+    prompt redhat
   '';
   
   home.packages = with pkgs; [
@@ -39,6 +39,7 @@
     nodejs
     dotnet-sdk_7
     python3
+    gcc
     jcal # calendar
     gimp
     discord

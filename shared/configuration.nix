@@ -23,7 +23,7 @@
   services.pcscd.enable = true;
   programs.gnupg.agent = {
      enable = true;
-     #pinentryFlavor = "gtk2";
+     #pinentryFlavor = "tty";
      #enableSSHSupport = true;
   };
 
