@@ -38,7 +38,7 @@
     obsidian
     nodejs
     dotnet-sdk_7
-    python3
+    python311
     gcc
     jcal # calendar
     gimp
@@ -47,6 +47,10 @@
     wget
     newsflash
     openssh
+    deno
+    clisp
+    poetry
+    yarn
   ];
 
   home.stateVersion = "23.05";
