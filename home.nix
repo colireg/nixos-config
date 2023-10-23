@@ -25,6 +25,7 @@
     zstyle ':completion:*' menu select
     zstyle ':completion::complete:*' gain-privileges 1
     prompt redhat
+    bindkey -v
   '';
   
   home.packages = with pkgs; [
@@ -40,12 +41,10 @@
     dotnet-sdk_7
     python311
     gcc
-    jcal # calendar
+    jcal # Calendar
     gimp
     discord
     telegram-desktop
-    wget
-    newsflash
     openssh
     deno
     clisp

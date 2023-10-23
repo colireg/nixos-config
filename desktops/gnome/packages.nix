@@ -23,6 +23,7 @@
     gnome.gnome-tweaks
     gnome.gucharmap # Character map
     gnome-solanum # Pomodoro timer
+    newsflash # RSS reader
   ]) ++ (with pkgs.gnomeExtensions; [
     just-perfection
     rounded-window-corners
