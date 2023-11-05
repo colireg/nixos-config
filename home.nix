@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
@@ -20,6 +20,20 @@
     userEmail = "mattyraud@gmail.com";
   };
 
+  programs.vim = {
+    enable = true;
+    plugins = with pkgs.vimPlugins; [ vim-polyglot vim-nix ];
+    extraConfig = ''
+      nnoremap <Up> <Nop>
+      nnoremap <Down> <Nop>
+      nnoremap <Left> <Nop>
+      nnoremap <Right> <Nop>
+      set mouse=""
+    '';
+    settings.number = true;
+    settings.relativenumber = true;
+  };
+
   programs.zsh.enable = true;
   programs.zsh.initExtra = ''
     zstyle ':completion:*' menu select
@@ -28,7 +42,7 @@
     bindkey -v
   '';
   
-  home.packages = with pkgs; [
+  home.packages = (with pkgs; [
     firefox
     vlc
     anki
@@ -36,7 +50,6 @@
     qbittorrent
     libreoffice
     hunspell # Spell check for LibreOffice
-    obsidian
     nodejs
     dotnet-sdk_7
     python311
@@ -49,8 +62,12 @@
     deno
     clisp
     poetry
-    yarn
-  ];
+    chromium
+  ]) ++ (with inputs.unstable.legacyPackages.x86_64-linux; [
+    yarn-berry
+    jujutsu
+    #obsidian
+  ]);
 
   home.stateVersion = "23.05";
   programs.home-manager.enable = true;
