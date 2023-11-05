@@ -1,13 +1,10 @@
-{ nixpkgs, pkgs, ... }:
+{ nixpkgs, unstable, pkgs,  ... }:
 
 {
   nixpkgs.config.allowUnfree = true;
+  #:unstable.config.allowUnfree = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  environment.sessionVariables = {
-    EDITOR = "vim";
-  };
 
   # Remove the desktop folder and set default user folder names to lowercase
   environment.etc."xdg/user-dirs.defaults".text = ''
@@ -28,10 +25,11 @@
   };
 
   environment.systemPackages = with pkgs; [
-    vim
     git
     wget
   ];
+
+  programs.vim.defaultEditor = true;
 
   # Get completion for system packages for zsh
   environment.pathsToLink = [ "/share/zsh" ];
