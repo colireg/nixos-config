@@ -18,10 +18,10 @@
     fsType = "vfat";
   };
 
-  fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/9a8ccbe5-46ca-4bc5-86db-b2cadb5c8e28";
-    fsType = "ext4";
-  };
+#  fileSystems."/home" = {
+#    device = "/dev/disk/by-uuid/9a8ccbe5-46ca-4bc5-86db-b2cadb5c8e28";
+#    fsType = "ext4";
+#  };
 
   swapDevices = [{
     device = "/dev/disk/by-uuid/8e24744b-79c7-4acc-9a11-16118b78714a";
@@ -36,10 +36,10 @@
     #keyFile = "/crypto_keyfile.bin";
   };
 
-  boot.initrd.luks.devices."home" = {
-   device = "/dev/disk/by-uuid/1d8f5655-0b3f-4278-ba2b-c56faf6adbf7";
-   keyFile = "/crypto_keyfile.bin";
-  };
+#  boot.initrd.luks.devices."home" = {
+#   device = "/dev/disk/by-uuid/1d8f5655-0b3f-4278-ba2b-c56faf6adbf7";
+#   keyFile = "/crypto_keyfile.bin";
+#  };
 
   networking.useDHCP = lib.mkDefault true;
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
