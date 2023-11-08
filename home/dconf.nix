@@ -6,7 +6,7 @@ with lib.hm.gvariant;
 {
   dconf.settings = {
     "org/gnome/desktop/background" = {
-      picture-uri = "file://${./resources/background.png}";
+      picture-uri = "file://${../resources/background.png}";
     };
 
     "org/gnome/desktop/input-sources" = {

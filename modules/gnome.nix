@@ -9,4 +9,19 @@
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   #systemd.services = { "getty@tty1".enable = false; "autovt@tty1".enable = false; };
+
+#  environment.gnome.excludePackage = (with pkgs; [
+#    gnome-tour
+#  ]) ++ (with pkgs.gnome; [
+#    cheese # webcam tool
+#    gnome-music
+#    gnome-maps
+#    gnome-characters
+#    epiphany # web browser
+#    totem # video player
+#    tali # poker game
+#    iagno # go game
+#    hitori # sudoku game
+#    atomix # puzzle game
+#  ]);
 }

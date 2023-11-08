@@ -15,21 +15,25 @@
   };
 
   outputs = inputs@{ nixpkgs, unstable, home-manager, ... } : {
-    nixosConfigurations.apollo = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.tartarus = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
-        ./machines/apollo
-        ./modules
-        ./shared
-        ./programs
-        ./desktops/kde
-        ./desktops/shared
+        ./machines/tartarus
+        ./modules/console.nix
+        ./modules/gnome.nix
+        ./modules/samba.nix
+        ./modules/xdg.nix
+        ./modules/zswap.nix
+        ./modules/fonts.nix
+        ./modules/gnupg.nix
+        ./modules/tor.nix
+        ./modules/zsh.nix
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = { inherit inputs; }; 
-          home-manager.users.matty = import ./home.nix;
+          home-manager.users.matty = import ./home;
         }
       ];
     };
