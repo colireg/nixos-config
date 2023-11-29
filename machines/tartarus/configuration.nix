@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   boot.loader.systemd-boot.enable = true;
@@ -21,6 +21,7 @@
 
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nixpkgs.config.permittedInsecurePackages = [ "electron-24.8.6" ];
 
   networking = {
     hostName = "tartarus";
@@ -66,6 +67,13 @@
   virtualisation.libvirtd.enable = true;
   virtualisation.docker.enable = true;
   virtualisation.vmware.host.enable = true;
+
+  services.upower = {
+    enable = true;
+    criticalPowerAction = "Hibernate";
+    percentageCritical = 6;
+    percentageLow = 20;
+  };
 
   system.stateVersion = "23.05"; 
 }

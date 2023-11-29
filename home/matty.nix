@@ -9,7 +9,7 @@
     MOZ_ENABLE_WAYLAND = "1"; # Firefox wayland
     DISABLE_QT5_COMPAT = "1"; # Anki
   };
-  
+
   home.packages = (with pkgs; [
     firefox
     vlc
@@ -18,45 +18,53 @@
     qbittorrent
     libreoffice
     hunspell # Spell check for LibreOffice
-    nodejs
-    dotnet-sdk_7
-    python311
-    gcc
     jcal # Calendar
     gimp
     discord
     telegram-desktop
     openssh
-    deno
-    clisp
-    poetry
     chromium
-    yarn
     ventoy
     jetbrains.rider
     tor-browser-bundle-bin
     virt-manager
+    zip
+    # Dev tools
+    nodejs
+    gcc
+    deno
+    clisp
+    poetry
+    yarn
+    python311
+    dotnet-sdk_7
+    jdk17
+    obsidian
   ]) ++ (with inputs.unstable.legacyPackages.x86_64-linux; [
     jujutsu
-    #obsidian
   ]);
-
 
   programs.git = {
     enable = true;
     userName = "matty";
     userEmail = "mattyraud@gmail.com";
+    lfs.enable = true;
+  };
+  programs.git.extraConfig = {
+    init.defaultBranch = "main";
+    core.fileMode = false;
   };
 
   programs.vim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [ vim-polyglot vim-nix ];
     extraConfig = ''
-      nnoremap <Up> <Nop>
-      nnoremap <Down> <Nop>
-      nnoremap <Left> <Nop>
-      nnoremap <Right> <Nop>
+      noremap <Up> <Nop>
+      noremap <Down> <Nop>
+      noremap <Left> <Nop>
+      noremap <Right> <Nop>
       set mouse=""
+      set nowrap
     '';
     settings.number = true;
     settings.relativenumber = true;
