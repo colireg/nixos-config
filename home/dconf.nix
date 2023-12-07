@@ -5,30 +5,22 @@ with lib.hm.gvariant;
 
 {
   dconf.settings = {
+    "org/gnome/Solanum" = {
+      lap-length = mkUint32 30;
+      long-break-length = mkUint32 30;
+      sessions-until-long-break = mkUint32 10;
+    };
+
     "org/gnome/desktop/background" = {
+      color-shading-type = "solid";
+      picture-options = "zoom";
       picture-uri = "file://${../resources/background.png}";
+      picture-uri-dark = "file://${../resources/background.png}";
     };
 
     "org/gnome/desktop/input-sources" = {
       sources = [ (mkTuple [ "xkb" "us" ]) (mkTuple [ "xkb" "ir+pes_keypad" ]) ];
-    };
-
-    "org/gnome/desktop/peripherals/touchpad" = {
-      tap-to-click = true;
-      two-finger-scrolling-enabled = true;
-    };
-
-    "org/gnome/shell" = {
-      disable-user-extensions = false;
-      disabled-extensions = [ "user-theme@gnome-shell-extensions.gcampax.github.com" ];
-      enabled-extensions = [ "rounded-window-corners@yilozt" "just-perfection-desktop@just-perfection" "unite@hardpixel.eu" ];
-      last-selected-power-profile = "performance";
-    };
-
-    "org/gnome/mutter" = {
-      dynamic-workspaces = true;
-      edge-tiling = true;
-      workspaces-only-on-primary = true;
+      xkb-options = [ "terminate:ctrl_alt_bksp" ];
     };
 
     "org/gnome/desktop/interface" = {
@@ -44,11 +36,16 @@ with lib.hm.gvariant;
       icon-theme = "ePapirus-Dark";
       locate-pointer = true;
       monospace-font-name = "IntelOne Mono Medium 10";
+      show-battery-percentage = true;
     };
 
-    "org/gnome/desktop/wm/preferences" = {
-      button-layout = "appmenu:close";
-      titlebar-font = "Noto Sans Bold 11";
+    "org/gnome/desktop/peripherals/keyboard" = {
+      numlock-state = false;
+    };
+
+    "org/gnome/desktop/peripherals/touchpad" = {
+      tap-to-click = true;
+      two-finger-scrolling-enabled = true;
     };
 
     "org/gnome/desktop/wm/keybindings" = {
@@ -58,20 +55,47 @@ with lib.hm.gvariant;
       move-to-workspace-2 = [ "<Shift><Super>2" ];
       move-to-workspace-3 = [ "<Shift><Super>3" ];
       move-to-workspace-4 = [ "<Shift><Super>4" ];
-      panel-run-dialog = [ "<Super>Return" ];
+      panel-run-dialog = [];
+      switch-applications = [];
+      switch-applications-backward = [];
+      switch-group = [];
+      switch-group-backward = [];
       switch-to-workspace-1 = [ "<Super>1" ];
       switch-to-workspace-2 = [ "<Super>2" ];
       switch-to-workspace-3 = [ "<Super>3" ];
       switch-to-workspace-4 = [ "<Super>4" ];
+      switch-windows = [ "<Alt>Tab" ];
+      switch-windows-backward = [ "<Shift><Alt>Tab" ];
     };
 
-    "org/gnome/settings-daemon/plugins/color" = {
-      night-light-enabled = true;
-      night-light-schedule-automatic = true;
-      night-light-temperature = mkUint32 3064;
+    "org/gnome/desktop/wm/preferences" = {
+      button-layout = "appmenu:close";
+      titlebar-font = "Noto Sans Bold 11";
+    };
+
+    "org/gnome/epiphany" = {
+      ask-for-default = false;
+    };
+
+    "org/gnome/mutter" = {
+      dynamic-workspaces = true;
+      edge-tiling = true;
+      workspaces-only-on-primary = true;
+    };
+
+    "org/gnome/nautilus/list-view" = {
+      default-zoom-level = "medium";
+    };
+
+    "org/gnome/nautilus/preferences" = {
+      default-folder-viewer = "list-view";
+      migrated-gtk-settings = true;
+      search-filter-time-type = "last_modified";
+      search-view = "list-view";
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
+      custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" ];
       magnifier-zoom-in = [ "<Super>KP_Add" ];
       magnifier-zoom-out = [ "<Super>KP_Subtract" ];
       next = [ "<Control><Super>Right" ];
@@ -83,9 +107,22 @@ with lib.hm.gvariant;
       volume-up = [ "<Super>F12" ];
     };
 
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      binding = "<Super>Return";
+      command = "kgx";
+      name = "Open Console";
+    };
+
     "org/gnome/settings-daemon/plugins/power" = {
       power-button-action = "hibernate";
       sleep-inactive-ac-type = "nothing";
+    };
+
+    "org/gnome/shell" = {
+      disable-user-extensions = true;
+      disabled-extensions = [ "user-theme@gnome-shell-extensions.gcampax.github.com" ];
+      enabled-extensions = [ "just-perfection-desktop@just-perfection" ];
+      last-selected-power-profile = "performance";
     };
 
     "org/gnome/shell/extensions/just-perfection" = {
@@ -97,20 +134,20 @@ with lib.hm.gvariant;
       controls-manager-spacing-size = 0;
       dash = false;
       dash-icon-size = 0;
-      double-super-to-appgrid = false;
+      double-super-to-appgrid = true;
       gesture = true;
       hot-corner = false;
       looking-glass-width = 0;
       notification-banner-position = 1;
       osd = true;
-      panel = false;
+      panel = true;
       panel-arrow = true;
       panel-corner-size = 0;
       panel-in-overview = true;
       ripple-box = true;
       search = false;
       show-apps-button = true;
-      startup-status = 0;
+      startup-status = 1;
       theme = false;
       window-demands-attention-focus = false;
       window-picker-icon = true;
@@ -120,33 +157,19 @@ with lib.hm.gvariant;
       workspace-background-corner-size = 0;
       workspace-popup = true;
       workspace-switcher-should-show = false;
-      workspace-wrap-around = true;
+      workspace-wrap-around = false;
       workspaces-in-app-grid = true;
     };
 
-    "org/gnome/shell/extensions/rounded-window-corners" = {
-      custom-rounded-corner-settings = "@a{sv} {}";
-      global-rounded-corner-settings = "{'padding': <{'left': <uint32 1>, 'right': <uint32 1>, 'top': <uint32 1>, 'bottom': <uint32 1>}>, 'keep_rounded_corners': <{'maximized': <false>, 'fullscreen': <false>}>, 'border_radius': <uint32 12>, 'smoothing': <uint32 0>}";
-      settings-version = mkUint32 5;
-    };
-
-    "org/gnome/shell/extensions/unite" = {
-      enable-titlebar-actions = false;
-      extend-left-box = false;
-      greyscale-tray-icons = true;
-      hide-activities-button = "never";
-      hide-window-titlebars = "always";
-      notifications-position = "center";
-      reduce-panel-spacing = false;
-      show-desktop-name = false;
-      show-legacy-tray = true;
-      show-window-buttons = "never";
-      show-window-title = "never";
-      window-buttons-placement = "right";
+    "org/gnome/shell/keybindings" = {
+      switch-to-application-1 = [];
+      switch-to-application-2 = [];
+      switch-to-application-3 = [];
+      switch-to-application-4 = [];
     };
 
     "org/gnome/shell/world-clocks" = {
-      locations = "[<(uint32 2, <('Berlin', 'EDDT', true, [(0.91746141594945008, 0.23241968454167572)], [(0.91658875132345297, 0.23387411976724018)])>)>]";
+      locations = [];
     };
 
     "org/gnome/terminal/legacy" = {
