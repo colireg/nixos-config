@@ -20,16 +20,8 @@
       specialArgs = { inherit inputs; };
       modules = [
         ./machines/tartarus
-        ./modules/console.nix
-        ./modules/gnome.nix
-        ./modules/samba.nix
-        ./modules/xdg.nix
-        ./modules/zswap.nix
-        ./modules/fonts.nix
-        ./modules/gnupg.nix
-        ./modules/tor.nix
-        ./modules/zsh.nix
-        home-manager.nixosModules.home-manager {
+        ./modules
+       home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = { inherit inputs; }; 
