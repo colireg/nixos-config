@@ -75,6 +75,6 @@
     percentageLow = 20;
   };
 
-  system.stateVersion = "23.05"; 
+  system.stateVersion = "23.11"; 
 }
 

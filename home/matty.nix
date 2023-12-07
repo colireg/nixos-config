@@ -25,12 +25,11 @@
     openssh
     chromium
     ventoy
-    jetbrains.rider
     tor-browser-bundle-bin
     virt-manager
     zip
     # Dev tools
-    nodejs
+    nodejs_20
     gcc
     deno
     clisp
@@ -40,6 +39,7 @@
     dotnet-sdk_7
     jdk17
     obsidian
+    bun
   ]) ++ (with inputs.unstable.legacyPackages.x86_64-linux; [
     jujutsu
   ]);
@@ -91,6 +91,6 @@
     package = pkgs.papirus-icon-theme;
   };
 
-  home.stateVersion = "23.05";
+  home.stateVersion = "23.11";
   programs.home-manager.enable = true;
 }

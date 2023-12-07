@@ -7,7 +7,7 @@
     serif = [ "Noto Serif" ];
     sansSerif = [ "Noto Sans" ];
   };
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     intel-one-mono
     fira-code
     fira
