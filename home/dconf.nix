@@ -119,7 +119,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/shell" = {
-      disable-user-extensions = true;
+      disable-user-extensions = false;
       disabled-extensions = [ "user-theme@gnome-shell-extensions.gcampax.github.com" ];
       enabled-extensions = [ "just-perfection-desktop@just-perfection" ];
       last-selected-power-profile = "performance";

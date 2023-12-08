@@ -9,7 +9,5 @@
     newsflash # RSS reader
   ]) ++ (with pkgs.gnomeExtensions; [
     just-perfection
-    rounded-window-corners
-    unite
   ]);
 }
