@@ -1,13 +1,13 @@
 {
   imports = [
-    ./modules/console.nix
-    ./modules/gnome.nix
-    ./modules/samba.nix
-    ./modules/xdg.nix
-    ./modules/zswap.nix
-    ./modules/fonts.nix
-    ./modules/gnupg.nix
-    ./modules/tor.nix
-    ./modules/zsh.nix
+    ./console.nix
+    ./gnome.nix
+    ./samba.nix
+    ./xdg.nix
+    ./zswap.nix
+    ./fonts.nix
+    ./gnupg.nix
+    ./tor.nix
+    ./zsh.nix
   ];
 }
