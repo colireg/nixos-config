@@ -34,9 +34,9 @@
     deno
     clisp
     poetry
-    yarn
+    yarn-berry
     python311
-    dotnet-sdk_7
+    dotnet-sdk_8
     jdk17
     obsidian
     bun
