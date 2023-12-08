@@ -1,22 +1,24 @@
 { config, pkgs, inputs, ... }:
 
 {
+  imports = [ ./hardware-configuration.nix ];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.zfs.requestEncryptionCredentials = true;
   boot.supportedFilesystems = [ "ntfs" "zfs" ];
+  boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
 
-  boot.initrd.luks.devices."root" = {
-    device = "/dev/disk/by-uuid/69c816c3-4f21-4504-b0dc-ed59009cc777";
+  boot.initrd.luks.devices."ssd" = {
+    device = "/dev/disk/by-uuid/f7af2d08-10a5-4f6f-9f26-0109c6d2cee4";
     preLVM = true;
     allowDiscards = true;
   };
 
-  boot.initrd.secrets."homekey" = "/homekey";
+  boot.initrd.secrets."hdd-key" = "/hdd-key";
 
   boot.initrd.luks.devices."hhd" = { 
-   device = "/dev/disk/by-uuid/07ff2e4f-cf11-4a80-adcd-6318b707bcdd"; 
-   keyFile = "homekey";
+   device = "/dev/disk/by-uuid/b7aa92ee-84b2-4efe-a760-5da638f477bc"; 
+   keyFile = "hdd-key";
   };
 
   nixpkgs.config.allowUnfree = true;
