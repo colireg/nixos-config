@@ -8,7 +8,7 @@
   boot.supportedFilesystems = [ "ntfs" "zfs" ];
   boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
 
-  boot.initrd.luks.devices."ssd" = {
+  boot.initrd.luks.devices."ssd-luks" = {
     device = "/dev/disk/by-uuid/f7af2d08-10a5-4f6f-9f26-0109c6d2cee4";
     preLVM = true;
     allowDiscards = true;
@@ -16,14 +16,14 @@
 
   boot.initrd.secrets."hdd-key" = "/hdd-key";
 
-  boot.initrd.luks.devices."hhd" = { 
-   device = "/dev/disk/by-uuid/b7aa92ee-84b2-4efe-a760-5da638f477bc"; 
+  boot.initrd.luks.devices."hhd-luks" = { 
+   device = "/dev/disk/by-uuid/0d9ab27a-4bf7-407b-abee-9d27be8c3e20"; 
    keyFile = "hdd-key";
   };
 
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nixpkgs.config.permittedInsecurePackages = [ "electron-24.8.6" ];
+  #nixpkgs.config.permittedInsecurePackages = [ "electron-24.8.6" ];
 
   networking = {
     hostName = "tartarus";
@@ -39,7 +39,7 @@
 
   services.xserver = {
     enable = true;
-    videoDrivers = [ "nouveau" ];
+    #videoDrivers = [ "nouveau" ];
     layout = "us"; # Configure keymap in X11
     xkbVariant = "";
     libinput.enable = true; # Enable touchpad support
@@ -48,7 +48,7 @@
   users.users.matty = {
     isNormalUser = true;
     description = "Matty";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" "docker" "tor" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "docker" "tor" "incus-admin" ];
   };
 
   nix.settings.trusted-users = [ "matty" ];
@@ -66,9 +66,12 @@
   services.zfs.autoScrub.enable = true;
 
   programs.dconf.enable = true;
-  virtualisation.libvirtd.enable = true;
-  virtualisation.docker.enable = true;
-  virtualisation.vmware.host.enable = true;
+  virtualisation = { 
+    libvirtd.enable = true;
+    docker.enable = true;
+    vmware.host.enable = true;
+    incus.enable = true;
+  };
 
   services.upower = {
     enable = true;
@@ -76,6 +79,30 @@
     percentageCritical = 6;
     percentageLow = 20;
   };
+
+  # Setup nvidia
+  #hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_390; # the package is broken for now :(
+
+  #hardware.opengl = {
+  #  enable = true;
+  #  driSupport = true;
+  #  driSupport32Bit = true;
+  #};
+
+  #services.xserver.videoDrivers = ["nvidia"];
+
+  #hardware.nvidia = {
+  #  modesetting.enable = true;
+  #  powerManagement.enable = false;
+  #  powerManagement.finegrained = false;
+  #  open = false;
+  #  nvidiaSettings = true;
+  #};
+
+  #hardware.nvidia.prime = {
+	#	intelBusId = "PCI:0:2:0";
+	#	nvidiaBusId = "PCI:01:0:0";
+	#};
 
   system.stateVersion = "23.11"; 
 }

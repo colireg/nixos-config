@@ -28,8 +28,8 @@
       fsType = "zfs";
     };
 
-  fileSystems."/home" =
-    { device = "hdd-pool/home";
+  fileSystems."/home/matty/backup" =
+    { device = "hdd-pool/backup";
       fsType = "zfs";
     };
 
