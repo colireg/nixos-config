@@ -28,8 +28,11 @@
     tor-browser-bundle-bin
     virt-manager
     zip
+    parted
+    sqlite
+    lshw
     # Dev tools
-    nodejs_20
+    nodejs_21
     gcc
     deno
     clisp
@@ -40,6 +43,7 @@
     jdk17
     obsidian
     bun
+    ghc
   ]) ++ (with inputs.unstable.legacyPackages.x86_64-linux; [
     jujutsu
   ]);
