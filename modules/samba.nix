@@ -1,8 +1,6 @@
-{ config, ... }:
+{ config, username, ... }:
 
 {
-  # Make shares visible for Windows 10 clients
-  services.samba-wsdd.enable = true; 
   services.samba = {
     enable = true;
     securityType = "user";
@@ -18,22 +16,27 @@
       hosts deny = 0.0.0.0/0
       guest account = nobody
       map to guest = bad user
-     '';
-   };
+    '';
+  };
+
+
+  # Make shares visible for Windows 10 clients
+  services.samba-wsdd.enable = true;
 
   # Open WSSD ports
-  networking.firewall.allowedTCPPorts = [ 5357 ];
-  networking.firewall.allowedUDPPorts = [ 3702 ];
+  networking.firewall = {
+    allowedTCPPorts = [ 5357 ];
+    allowedUDPPorts = [ 3702 ];
+  };
 
-  # TO-DO: Replace username with a variable
   services.samba.shares.public = {
-    path = "/home/matty/public";
+    path = "/home/${username}/public";
     browseable = "yes";
     "read only" = "no";
     public = "yes";
     writable = "yes";
     "guest ok" = "yes";
     "guest only" = "yes";
-    "force user" = "matty";
+    "force user" = username;
   };
 }

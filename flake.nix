@@ -12,20 +12,26 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ nixpkgs, unstable, home-manager, ... } : {
-    nixosConfigurations.tartarus = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = { inherit inputs; };
-      modules = [
-       ./machines/tartarus
-       ./modules
-       home-manager.nixosModules.home-manager {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = { inherit inputs; }; 
-          home-manager.users.matty = import ./home;
-        }
-      ];
+  outputs = inputs@{ nixpkgs, unstable, home-manager, ... }:
+    let
+      host = "tartarus";
+      username = "matty";
+    in
+    {
+      nixosConfigurations.tartarus = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs username; };
+        modules = [
+          ./machines/${host}
+          ./modules
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs username; };
+            home-manager.users.${username} = import ./home/${username};
+          }
+        ];
+      };
     };
-  };
 }

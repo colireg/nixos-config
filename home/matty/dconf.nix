@@ -14,8 +14,8 @@ with lib.hm.gvariant;
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file://${../resources/background.png}";
-      picture-uri-dark = "file://${../resources/background.png}";
+      picture-uri = "file://${../../resources/background.png}";
+      picture-uri-dark = "file://${../../resources/background.png}";
     };
 
     "org/gnome/desktop/input-sources" = {

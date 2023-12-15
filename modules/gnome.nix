@@ -1,27 +1,35 @@
 { pkgs, config, ... }:
 
 {
-  services.xserver.desktopManager.gnome.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
+  services.xserver = {
+    enable = true;
+    desktopManager.gnome.enable = true;
+    displayManager.gdm.enable = true;
+  };
 
-  # Enable automatic login for the user.
-  #services.xserver.displayManager.autoLogin = { enable = true; user = "${config.home.username}"; };
+  environment.gnome.excludePackages = (with pkgs; [
+    gnome-tour
+  ]) ++ (with pkgs.gnome; [
+    cheese # webcam tool
+    gnome-music
+    gnome-maps
+    gnome-characters
+    epiphany # web browser
+    totem # video player
+    tali # poker game
+    iagno # go game
+    hitori # sudoku game
+    atomix # puzzle game
+  ]);
 
-  # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
-  #systemd.services = { "getty@tty1".enable = false; "autovt@tty1".enable = false; };
-
-#  environment.gnome.excludePackage = (with pkgs; [
-#    gnome-tour
-#  ]) ++ (with pkgs.gnome; [
-#    cheese # webcam tool
-#    gnome-music
-#    gnome-maps
-#    gnome-characters
-#    epiphany # web browser
-#    totem # video player
-#    tali # poker game
-#    iagno # go game
-#    hitori # sudoku game
-#    atomix # puzzle game
-#  ]);
+  environment.systemPackages = (with pkgs; [
+    foliate # EPUB reader
+    gnome-epub-thumbnailer # EPUB thumbnailer for Nautilous
+    gnome.gnome-tweaks
+    gnome.gucharmap # Character map
+    gnome-solanum # Pomodoro timer
+    newsflash # RSS reader
+  ]) ++ (with pkgs.gnomeExtensions; [
+    just-perfection
+  ]);
 }
