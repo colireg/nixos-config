@@ -5,7 +5,7 @@ let
     name = "vim";
     # Install plugins for example for syntax highlighting of nix files
     vimrcConfig.packages.myplugins = with pkgs.vimPlugins; {
-      start = [ vim-nix vim-lastplace vim-polyglot ];
+      start = [ vim-nix vim-lastplace vim-polyglot rust-vim vim-javascript];
       opt = [ ];
     };
     vimrcConfig.customRC = ''
