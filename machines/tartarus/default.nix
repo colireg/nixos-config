@@ -1,10 +1,9 @@
-{ config, pkgs, ... }:
-
 {
   imports = [
     ./boot.nix
     ./hardware-configuration.nix
     ./networking.nix
+    ./packages.nix
     #./nvidia.nix #the package is broken
     ./upower.nix
     ./users.nix
@@ -20,7 +19,6 @@
   sound.enable = true;
   hardware.pulseaudio.enable = true;
   zramSwap.enable = true;
-  environment.systemPackages = with pkgs; [ wget ];
   system.stateVersion = "23.11";
 }
 

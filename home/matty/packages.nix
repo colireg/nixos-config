@@ -17,16 +17,12 @@
 
     # Tools
     hunspell # Spell check for LibreOffice
-    jcal
-    openssh
     ventoy
-    zip
-    parted
     sqlite
-    lshw
     jujutsu
     nixpkgs-fmt # Nix code formatter
     irssi # IRS client
+    jcal
 
     # Langs
     nodejs_21
@@ -40,5 +36,7 @@
     jdk17
     bun
     ghc
+    rustc
+    cargo
   ]);
 }

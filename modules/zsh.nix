@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 {
-
   programs.zsh = {
     enable = true;
     syntaxHighlighting.enable = true;
@@ -14,7 +13,7 @@
     theme = "essembeh";
     plugins = [ "sudo" "git" "vi-mode" "tmux" ];
   };
-  environment.shells = with pkgs; [ zsh ];
+  environment.shells = [ pkgs.zsh ];
   users.defaultUserShell = pkgs.zsh;
 
   # Get completion for system packages for zsh
