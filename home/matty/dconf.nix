@@ -5,19 +5,6 @@ with lib.hm.gvariant;
 
 {
   dconf.settings = {
-    "org/gnome/Solanum" = {
-      lap-length = mkUint32 30;
-      long-break-length = mkUint32 30;
-      sessions-until-long-break = mkUint32 10;
-    };
-
-    "org/gnome/desktop/background" = {
-      color-shading-type = "solid";
-      picture-options = "zoom";
-      picture-uri = "file://${../../resources/background.png}";
-      picture-uri-dark = "file://${../../resources/background.png}";
-    };
-
     "org/gnome/desktop/input-sources" = {
       sources = [ (mkTuple [ "xkb" "us" ]) (mkTuple [ "xkb" "ir+pes_keypad" ]) ];
       xkb-options = [ "terminate:ctrl_alt_bksp" ];
@@ -48,13 +35,16 @@ with lib.hm.gvariant;
       two-finger-scrolling-enabled = true;
     };
 
-    "org/gnome/desktop/wm/keybindings" = {
+    "org/gnome/desktop/wm/keybindings" = 
       close = [ "<Super>w" ];
+      maximize = [ "<Super>k" ];
       minimize = [];
       move-to-workspace-1 = [ "<Shift><Super>1" ];
       move-to-workspace-2 = [ "<Shift><Super>2" ];
       move-to-workspace-3 = [ "<Shift><Super>3" ];
       move-to-workspace-4 = [ "<Shift><Super>4" ];
+      move-to-workspace-left = [ "<Shift><Super>h" ];
+      move-to-workspace-right = [ "<Shift><Super>l" ];
       panel-run-dialog = [];
       switch-applications = [];
       switch-applications-backward = [];
@@ -64,8 +54,11 @@ with lib.hm.gvariant;
       switch-to-workspace-2 = [ "<Super>2" ];
       switch-to-workspace-3 = [ "<Super>3" ];
       switch-to-workspace-4 = [ "<Super>4" ];
+      switch-to-workspace-left = [ "<Control><Super>h" ];
+      switch-to-workspace-right = [ "<Control><Super>l" ];
       switch-windows = [ "<Alt>Tab" ];
       switch-windows-backward = [ "<Shift><Alt>Tab" ];
+      unmaximize = [ "<Super>j" ];
     };
 
     "org/gnome/desktop/wm/preferences" = {
@@ -81,6 +74,11 @@ with lib.hm.gvariant;
       dynamic-workspaces = true;
       edge-tiling = true;
       workspaces-only-on-primary = true;
+    };
+
+    "org/gnome/mutter/keybindings" = {
+      toggle-tiled-left = [ "<Super>h" ];
+      toggle-tiled-right = [ "<Super>l" ];
     };
 
     "org/gnome/nautilus/list-view" = {
