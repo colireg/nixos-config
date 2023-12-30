@@ -35,7 +35,7 @@ with lib.hm.gvariant;
       two-finger-scrolling-enabled = true;
     };
 
-    "org/gnome/desktop/wm/keybindings" = 
+    "org/gnome/desktop/wm/keybindings" = {
       close = [ "<Super>w" ];
       maximize = [ "<Super>k" ];
       minimize = [];
