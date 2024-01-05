@@ -7,6 +7,7 @@
     ./gnupg.nix
     #./kde.nix
     #./samba.nix
+    ./syncthing.nix
     ./tmux.nix
     ./tor.nix
     ./vim.nix
