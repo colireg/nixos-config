@@ -36,7 +36,6 @@
     jdk17
     bun
     ghc
-    rustc
-    cargo
+    rustup
   ]);
 }
