@@ -37,5 +37,6 @@
     bun
     ghc
     rustup
+    lua
   ]);
 }
