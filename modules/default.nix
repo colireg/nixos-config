@@ -6,6 +6,7 @@
     ./gnome.nix
     ./gnupg.nix
     #./kde.nix
+    #./openrgb.nix
     #./samba.nix
     ./syncthing.nix
     ./tmux.nix
