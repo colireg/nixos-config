@@ -138,7 +138,7 @@ with lib.hm.gvariant;
       looking-glass-width = 0;
       notification-banner-position = 1;
       osd = true;
-      panel = true;
+      panel = false;
       panel-arrow = true;
       panel-corner-size = 0;
       panel-in-overview = true;

@@ -1,9 +1,7 @@
-{ username, ... }:
-
 {
-  users.users.${username} = {
+  users.users.matty = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" "libvirtd" "docker" "tor" "incus-admin" ];
   };
-  nix.settings.trusted-users = [ username ];
+  nix.settings.trusted-users = [ "matty" ];
 }

@@ -37,6 +37,6 @@
     bun
     ghc
     rustup
-    lua
+    lua54Packages.lua
   ]);
 }
