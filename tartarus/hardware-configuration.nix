@@ -33,10 +33,10 @@
       fsType = "zfs";
     };
 
-  fileSystems."/bulk" =
-    { device = "/dev/disk/by-uuid/82cf0420-2655-4f52-939e-64f00e5e485b";
-      fsType = "ext4";
-    };
+  #fileSystems."/bulk" =
+  #  { device = "/dev/disk/by-uuid/82cf0420-2655-4f52-939e-64f00e5e485b";
+  #    fsType = "ext4";
+  #  };
 
   # swapDevices =
   #   [ { device = "/dev/disk/by-uuid/58a3d72b-91e4-4fc0-a446-77f3c4a4877f"; }

@@ -1,3 +1,5 @@
+{ ... }:
+
 {
   services.tor = {
     enable = true;

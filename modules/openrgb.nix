@@ -1,4 +1,5 @@
 { config, pkgs, ... }:
+
 let
   openrgb-rules = builtins.fetchurl {
     url = "https://openrgb.org/releases/release_0.9/60-openrgb.rules";

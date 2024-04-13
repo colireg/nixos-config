@@ -1,3 +1,5 @@
+{ ... }:
+
 {
   programs.tmux = {
     enable = true;

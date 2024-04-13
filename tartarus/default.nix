@@ -1,6 +1,7 @@
 {
   imports = [
     ./base.nix
+    ./boot.nix
     ./hardware-configuration.nix
     ./networking.nix
     #./nvidia.nix

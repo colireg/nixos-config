@@ -1,3 +1,5 @@
+{ ... }:
+
 {
   services.syncthing = {
     enable = true;

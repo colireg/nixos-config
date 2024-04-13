@@ -1,3 +1,5 @@
+{ ... }:
+
 {
   networking.hostName = "tartarus";
   networking.networkmanager.enable = true;
@@ -7,5 +9,4 @@
     allowedTCPPorts = [ 8000 ];
     allowedUDPPorts = [ 8000 ];
   };
-
 }
