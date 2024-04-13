@@ -6,7 +6,6 @@
     firefox
     vlc
     anki
-    vscode-fhs
     qbittorrent
     libreoffice
     gimp

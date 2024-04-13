@@ -19,7 +19,7 @@ with lib.hm.gvariant;
       font-antialiasing = "grayscale";
       font-hinting = "slight";
       font-name = "Noto Sans 11";
-      gtk-theme = "Adwaita-dark";
+      gtk-theme = "Dracula";
       icon-theme = "ePapirus-Dark";
       locate-pointer = true;
       monospace-font-name = "IntelOne Mono Medium 10";
@@ -118,8 +118,7 @@ with lib.hm.gvariant;
 
     "org/gnome/shell" = {
       disable-user-extensions = false;
-      disabled-extensions = [ "user-theme@gnome-shell-extensions.gcampax.github.com" ];
-      enabled-extensions = [ "just-perfection-desktop@just-perfection" ];
+      enabled-extensions = [ "just-perfection-desktop@just-perfection" "user-theme@gnome-shell-extensions.gcampax.github.com" ];
       last-selected-power-profile = "performance";
     };
 
@@ -157,6 +156,10 @@ with lib.hm.gvariant;
       workspace-switcher-should-show = false;
       workspace-wrap-around = false;
       workspaces-in-app-grid = true;
+    };
+
+    "org/gnome/shell/extensions/user-theme" = {
+      name = "dracula";
     };
 
     "org/gnome/shell/keybindings" = {

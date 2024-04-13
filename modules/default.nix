@@ -13,7 +13,7 @@
     ./syncthing.nix
     ./tmux.nix
     ./tor.nix
-    ./vim.nix
+    ./nvim.nix
     ./xdg.nix
     ./zsh.nix
   ];
