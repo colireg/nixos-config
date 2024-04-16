@@ -33,7 +33,7 @@
         type = "lua";
       }
       {
-        plugin = nvim-treesitter.withPlugins (p: [ p.javascript p.typescript p.json p.lua p.nix ]);
+        plugin = nvim-treesitter.withAllGrammars;
         config = builtins.readFile ./treesitter.lua;
         type = "lua";
       }
