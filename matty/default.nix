@@ -2,13 +2,14 @@
 
 {
   imports = [
-    ./dconf.nix
     ./env.nix
-    ./gtk.nix
     ./home.nix
     ./packages.nix
-    ./nvim
-    ./tmux.nix
-    ./vscode.nix
+
+    ../home/dconf.nix
+    ../home/gtk.nix
+    ../home/nvim
+    ../home/tmux.nix
+    ../home/vscode.nix
   ];
 }
