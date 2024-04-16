@@ -9,6 +9,7 @@
       rust-analyzer
       lua-language-server
       nodePackages.typescript-language-server
+      nixd
     ];
     plugins = with pkgs.vimPlugins; [
       # LSP
@@ -24,12 +25,12 @@
 
       {
         plugin = telescope-nvim;
-	      config = builtins.readFile ./telescope.lua;
+        config = builtins.readFile ./telescope.lua;
         type = "lua";
       }
       {
         plugin = dracula-nvim;
-	      config = builtins.readFile ./dracula.lua;
+        config = builtins.readFile ./dracula.lua;
         type = "lua";
       }
       {
@@ -52,6 +53,6 @@
         config = builtins.readFile ./fugitive.lua;
         type = "lua";
       }
-    ];  
+    ];
   };
 }

@@ -7,3 +7,4 @@ end)
 require('lspconfig').tsserver.setup({})
 require('lspconfig').rust_analyzer.setup({})
 require('lspconfig').lua_ls.setup({})
+require('lspconfig').nixd.setup{}
