@@ -7,7 +7,7 @@
     ./gtk.nix
     ./home.nix
     ./packages.nix
-    ./nvim.nix
+    ./nvim
     ./tmux.nix
     ./vscode.nix
   ];
