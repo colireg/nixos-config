@@ -8,9 +8,10 @@
     parted
     bat # cat
     ripgrep
-    fzf
     ncdu # disk usage
-    htop
     duf
   ];
+  programs.htop.enable = true;
+  programs.fzf.fuzzyCompletion = true;
+  programs.fzf.keybindings = true;
 }

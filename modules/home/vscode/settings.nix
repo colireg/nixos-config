@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   "terminal.integrated.env.linux" = { };
   "workbench.colorTheme" = "Dracula";

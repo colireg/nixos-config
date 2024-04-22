@@ -3,13 +3,17 @@
 {
   imports = [
     ./env.nix
-    ./home.nix
     ./packages.nix
 
-    ../home/dconf.nix
-    ../home/gtk.nix
-    ../home/nvim
-    ../home/tmux.nix
-    ../home/vscode
+    ../modules/home/dconf.nix
+    ../modules/home/gtk.nix
+    ../modules/home/nvim
+    ../modules/home/tmux.nix
+    ../modules/home/vscode
   ];
+
+  home.username = "matty";
+  home.homeDirectory = "/home/matty";
+  home.stateVersion = "23.11";
+  programs.home-manager.enable = true;
 }
