@@ -5,11 +5,16 @@
     wget
     openssh
     zip
+    unzip
     parted
     bat # cat
     ripgrep
     ncdu # disk usage
     duf
+
+    nixfmt
+    statix
+    vulnix
   ];
   programs.htop.enable = true;
   programs.fzf.fuzzyCompletion = true;
