@@ -1,4 +1,4 @@
-# Generated via dconf2nix: https://github.com/gvolpe/dconf2nix
+# Generated via dconf3nix: https://github.com/gvolpe/dconf2nix
 { lib, ... }:
 
 with lib.hm.gvariant;
@@ -11,19 +11,14 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/desktop/interface" = {
-      clock-show-seconds = false;
-      clock-show-weekday = true;
       color-scheme = "prefer-dark";
       document-font-name = "Noto Sans 11";
       enable-animations = true;
-      font-antialiasing = "grayscale";
-      font-hinting = "slight";
       font-name = "Noto Sans 11";
-      gtk-theme = "Dracula";
-      icon-theme = "ePapirus-Dark";
+      # gtk-theme = "Catppuccin-Mocha";
+      # icon-theme = "Papirus-Dark";
       locate-pointer = true;
       monospace-font-name = "IntelOne Mono Medium 10";
-      show-battery-percentage = true;
     };
 
     "org/gnome/desktop/peripherals/keyboard" = {
@@ -38,18 +33,18 @@ with lib.hm.gvariant;
     "org/gnome/desktop/wm/keybindings" = {
       close = [ "<Super>w" ];
       maximize = [ "<Super>k" ];
-      minimize = [];
+      minimize = [ ];
       move-to-workspace-1 = [ "<Shift><Super>1" ];
       move-to-workspace-2 = [ "<Shift><Super>2" ];
       move-to-workspace-3 = [ "<Shift><Super>3" ];
       move-to-workspace-4 = [ "<Shift><Super>4" ];
       move-to-workspace-left = [ "<Shift><Super>h" ];
       move-to-workspace-right = [ "<Shift><Super>l" ];
-      panel-run-dialog = [];
-      switch-applications = [];
-      switch-applications-backward = [];
-      switch-group = [];
-      switch-group-backward = [];
+      panel-run-dialog = [ ];
+      switch-applications = [ ];
+      switch-applications-backward = [ ];
+      switch-group = [ ];
+      switch-group-backward = [ ];
       switch-to-workspace-1 = [ "<Super>1" ];
       switch-to-workspace-2 = [ "<Super>2" ];
       switch-to-workspace-3 = [ "<Super>3" ];
@@ -66,10 +61,6 @@ with lib.hm.gvariant;
       titlebar-font = "Noto Sans Bold 11";
     };
 
-    "org/gnome/epiphany" = {
-      ask-for-default = false;
-    };
-
     "org/gnome/mutter" = {
       dynamic-workspaces = true;
       edge-tiling = true;
@@ -79,17 +70,6 @@ with lib.hm.gvariant;
     "org/gnome/mutter/keybindings" = {
       toggle-tiled-left = [ "<Super>h" ];
       toggle-tiled-right = [ "<Super>l" ];
-    };
-
-    "org/gnome/nautilus/list-view" = {
-      default-zoom-level = "medium";
-    };
-
-    "org/gnome/nautilus/preferences" = {
-      default-folder-viewer = "list-view";
-      migrated-gtk-settings = true;
-      search-filter-time-type = "last_modified";
-      search-view = "list-view";
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
@@ -111,15 +91,9 @@ with lib.hm.gvariant;
       name = "Open Console";
     };
 
-    "org/gnome/settings-daemon/plugins/power" = {
-      power-button-action = "hibernate";
-      sleep-inactive-ac-type = "nothing";
-    };
-
     "org/gnome/shell" = {
       disable-user-extensions = false;
       enabled-extensions = [ "just-perfection-desktop@just-perfection" "user-theme@gnome-shell-extensions.gcampax.github.com" ];
-      last-selected-power-profile = "performance";
     };
 
     "org/gnome/shell/extensions/just-perfection" = {
@@ -163,23 +137,10 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/shell/keybindings" = {
-      switch-to-application-1 = [];
-      switch-to-application-2 = [];
-      switch-to-application-3 = [];
-      switch-to-application-4 = [];
+      switch-to-application-1 = [ ];
+      switch-to-application-2 = [ ];
+      switch-to-application-3 = [ ];
+      switch-to-application-4 = [ ];
     };
-
-    "org/gnome/shell/world-clocks" = {
-      locations = [];
-    };
-
-    "org/gnome/terminal/legacy" = {
-      theme-variant = "dark";
-    };
-
-    "org/gnome/tweaks" = {
-      show-extensions-notice = false;
-    };
-
   };
 }
