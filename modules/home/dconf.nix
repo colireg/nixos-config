@@ -12,13 +12,20 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
+      cursor-size = 24;
+      cursor-theme = "Adwaita";
       document-font-name = "Noto Sans 11";
       enable-animations = true;
+      font-antialiasing = "grayscale";
+      font-hinting = "slight";
       font-name = "Noto Sans 11";
-      # gtk-theme = "Catppuccin-Mocha";
-      # icon-theme = "Papirus-Dark";
+      gtk-theme = "Adwaita-dark";
+      icon-theme = "Adwaita";
       locate-pointer = true;
       monospace-font-name = "IntelOne Mono Medium 10";
+      scaling-factor = uint32 1;
+      text-scaling-factor = 1.0;
+      toolbar-style = "text";
     };
 
     "org/gnome/desktop/peripherals/keyboard" = {
@@ -93,7 +100,7 @@ with lib.hm.gvariant;
 
     "org/gnome/shell" = {
       disable-user-extensions = false;
-      enabled-extensions = [ "just-perfection-desktop@just-perfection" "user-theme@gnome-shell-extensions.gcampax.github.com" ];
+      enabled-extensions = [ "just-perfection-desktop@just-perfection" "unite@hardpixel.eu" ];
     };
 
     "org/gnome/shell/extensions/just-perfection" = {
@@ -132,8 +139,20 @@ with lib.hm.gvariant;
       workspaces-in-app-grid = true;
     };
 
-    "org/gnome/shell/extensions/user-theme" = {
-      name = "dracula";
+    "org/gnome/shell/extensions/unite" = {
+      autofocus-windows = false;
+      enable-titlebar-actions = false;
+      extend-left-box = false;
+      hide-activities-button = "never";
+      hide-window-titlebars = "always";
+      notifications-position = "center";
+      restrict-to-primary-screen = false;
+      show-appmenu-button = false;
+      show-desktop-name = false;
+      show-legacy-tray = false;
+      show-window-buttons = "never";
+      show-window-title = "never";
+      use-activities-text = true;
     };
 
     "org/gnome/shell/keybindings" = {
