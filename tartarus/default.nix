@@ -13,7 +13,7 @@
     ../modules/core/console.nix
     ../modules/core/fonts.nix
     ../modules/core/git.nix
-    ../modules/core/gnome.nix
+    ../modules/core/gnome
     ../modules/core/gnupg.nix
     ../modules/core/syncthing.nix
     ../modules/core/tmux.nix
@@ -23,6 +23,7 @@
     ../modules/core/zsh.nix
   ];
 
+  services.xserver.enable = true;
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];

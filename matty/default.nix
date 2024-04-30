@@ -5,7 +5,6 @@
     ./env.nix
     ./packages.nix
 
-    ../modules/home/dconf.nix
     ../modules/home/gtk.nix
     ../modules/home/nvim
     ../modules/home/tmux.nix
