@@ -9,6 +9,8 @@
     ./packages.nix
 
     ../modules/core/virtualization.nix
+    ../modules/core/bluetooth.nix
+    ../modules/core/audio.nix
     ../modules/core/zfs.nix
     ../modules/core/console.nix
     ../modules/core/fonts.nix
@@ -30,7 +32,6 @@
   time.timeZone = "Asia/Tehran";
   i18n.defaultLocale = "en_US.UTF-8";
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
   zramSwap.enable = true;
   system.stateVersion = "23.11";
 }

@@ -57,6 +57,7 @@
       "org/gnome/desktop/wm/preferences" = {
         button-layout = "appmenu:close";
         titlebar-font = "Noto Sans Bold 11";
+        action-middle-click-titlebar = "lower";
       };
 
       "org/gnome/mutter" = {
