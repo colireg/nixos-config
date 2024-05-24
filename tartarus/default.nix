@@ -8,6 +8,8 @@
     ./users.nix
     ./packages.nix
 
+
+    #../modules/core/postgresql.nix
     ../modules/core/virtualization.nix
     ../modules/core/bluetooth.nix
     ../modules/core/audio.nix
