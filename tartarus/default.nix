@@ -11,6 +11,7 @@
 
     #../modules/core/postgresql.nix
     ../modules/core/virtualization.nix
+    #../modules/core/samba.nix
     ../modules/core/bluetooth.nix
     ../modules/core/audio.nix
     ../modules/core/zfs.nix
