@@ -10,7 +10,12 @@
       lua-language-server
       nodePackages.typescript-language-server
       nixd
+      xclip
+      pyright
+      pylint
+      elixir-ls
     ];
+
     plugins = with pkgs.vimPlugins; [
       # LSP
       nvim-lspconfig
