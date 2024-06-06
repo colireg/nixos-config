@@ -11,6 +11,7 @@
     ripgrep
     ncdu # disk usage
     duf
+    jq
 
     nixfmt
     statix
