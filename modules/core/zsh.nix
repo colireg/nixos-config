@@ -7,10 +7,11 @@
     enableCompletion = true;
     autosuggestions.enable = true;
     autosuggestions.strategy = [ "completion" ];
+    promptInit = ''PROMPT="%{$fg[green]%}%%%{$reset_color%} "'';
   };
   programs.zsh.ohMyZsh = {
     enable = true;
-    theme = "essembeh";
+    theme = "imajes";
     plugins = [ "sudo" "git" "vi-mode" "tmux" ];
   };
   environment.shells = [ pkgs.zsh ];
