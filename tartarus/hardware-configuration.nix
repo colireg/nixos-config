@@ -24,12 +24,12 @@
     };
 
   fileSystems."/nix/store" =
-    { device = "ssd-pool/root/nix-store";
+    { device = "ssd-pool/nix-store";
       fsType = "zfs";
     };
 
   fileSystems."/home" =
-    { device = "ssd-pool/root/home";
+    { device = "hdd-pool/home";
       fsType = "zfs";
     };
 
