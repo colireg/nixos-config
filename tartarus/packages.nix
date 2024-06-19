@@ -12,6 +12,8 @@
     ncdu # disk usage
     duf
     jq
+    nnn
+    jcal
 
     nixfmt
     statix

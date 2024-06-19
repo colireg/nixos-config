@@ -18,6 +18,5 @@
     # Tools
     hunspell # Spell check for LibreOffice
     nixpkgs-fmt # Nix code formatter
-    jcal
   ]);
 }
