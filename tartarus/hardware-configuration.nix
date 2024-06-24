@@ -29,7 +29,7 @@
     };
 
   fileSystems."/home" =
-    { device = "hdd-pool/home";
+    { device = "ssd-pool/home";
       fsType = "zfs";
     };
 
