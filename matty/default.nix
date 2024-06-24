@@ -5,10 +5,10 @@
     ./env.nix
     ./packages.nix
 
-    ../modules/home/gtk.nix
-    ../modules/home/nvim
-    ../modules/home/tmux.nix
-    ../modules/home/vscode
+    ../home/gtk.nix
+    ../home/nvim
+    ../home/tmux.nix
+    ../home/vscode
   ];
 
   # For bluetooth

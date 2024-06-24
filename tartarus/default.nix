@@ -8,24 +8,24 @@
     ./users.nix
     ./packages.nix
 
-    #../modules/core/postgresql.nix
-    ../modules/core/virtualization.nix
-    ../modules/core/emacs.nix
+    #../core/postgresql.nix
+    ../core/virtualization.nix
+    ../core/emacs.nix
     #../modules/core/samba.nix
-    ../modules/core/bluetooth.nix
-    ../modules/core/audio.nix
-    ../modules/core/zfs.nix
-    ../modules/core/console.nix
-    ../modules/core/fonts.nix
-    ../modules/core/git.nix
-    ../modules/core/gnome
-    ../modules/core/gnupg.nix
-    ../modules/core/syncthing.nix
-    ../modules/core/tmux.nix
-    ../modules/core/tor.nix
-    ../modules/core/nvim.nix
-    ../modules/core/xdg.nix
-    ../modules/core/zsh.nix
+    ../core/bluetooth.nix
+    ../core/audio.nix
+    ../core/zfs.nix
+    ../core/console.nix
+    ../core/fonts.nix
+    ../core/git.nix
+    ../core/gnome
+    ../core/gnupg.nix
+    ../core/syncthing.nix
+    ../core/tmux.nix
+    ../core/tor.nix
+    ../core/nvim.nix
+    ../core/xdg.nix
+    ../core/zsh.nix
   ];
 
   services.xserver.enable = true;
