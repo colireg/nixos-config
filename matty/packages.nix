@@ -14,6 +14,7 @@
     chromium
     tor-browser-bundle-bin
     obsidian
+    imhex
 
     # Tools
     hunspell # Spell check for LibreOffice

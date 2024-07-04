@@ -14,6 +14,7 @@
     jq
     nnn
     jcal
+    lsof
 
     nixfmt
     statix
