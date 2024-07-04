@@ -18,7 +18,8 @@
     ../core/console.nix
     ../core/fonts.nix
     ../core/git.nix
-    ../core/gnome
+    #../core/gnome
+    ../core/i3.nix
     ../core/gnupg.nix
     ../core/syncthing.nix
     ../core/tmux.nix
