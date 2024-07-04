@@ -22,12 +22,8 @@
       extraPackages = with pkgs; [
         alacritty
         dmenu
-
         i3status # gives you the default i3 status bar
-        i3lock # default i3 screen locker
         i3blocks # if you are planning on using i3blocks over i3status
-        dunst # Notification deamon
-
         arc-theme
         clipmenu
       ];
