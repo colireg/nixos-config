@@ -2,12 +2,17 @@
 
 {
   environment.pathsToLink = [ "/libexec" ];
-  services.displayManager.defaultSession = "xfce+i3"; 
+  services.displayManager.defaultSession = "xfce+i3";
   services.libinput.touchpad.naturalScrolling = true;
   services.xserver = {
     enable = true;
     displayManager = {
       lightdm.enable = true;
+      lightdm.greeters.gtk = {
+        enable = true;
+        theme.name = "Arc-Dark";
+        theme.package = pkgs.arc-theme;
+      };
     };
     desktopManager = {
       xterm.enable = false;
