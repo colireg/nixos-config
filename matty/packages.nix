@@ -15,6 +15,7 @@
     tor-browser-bundle-bin
     obsidian
     imhex
+    zed-editor
 
     # Tools
     hunspell # Spell check for LibreOffice
