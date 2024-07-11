@@ -4,6 +4,7 @@
   environment.pathsToLink = [ "/libexec" ];
   services.displayManager.defaultSession = "xfce+i3";
   services.libinput.touchpad.naturalScrolling = true;
+  services.gnome.gnome-keyring.enable = true;
   services.xserver = {
     enable = true;
     displayManager = {
