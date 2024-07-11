@@ -13,7 +13,6 @@
       commit.gpgsign = true;
       user.name = username;
       user.email = email;
-      alias.l = "log --graph --oneline --decorate --all";
     };
   };
 }
