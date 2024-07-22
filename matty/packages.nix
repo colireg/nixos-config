@@ -16,6 +16,7 @@
     obsidian
     imhex
     zed-editor
+    logseq
 
     # Tools
     hunspell # Spell check for LibreOffice

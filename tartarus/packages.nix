@@ -15,6 +15,7 @@
     nnn
     jcal
     lsof
+    restic
 
     nixfmt
     statix
