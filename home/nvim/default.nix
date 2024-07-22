@@ -28,15 +28,6 @@
       luasnip
       friendly-snippets
 
-      (pkgs.vimUtils.buildVimPlugin {
-        pname = "obsidian";
-        version = "v3.7.12";
-        src = builtins.fetchGit {
-          url = "https://github.com/epwalsh/obsidian.nvim";
-          rev = "db41b1f20459293436fab510bec58c82a73bd1f7";
-        };
-      })
-
       {
         plugin = telescope-nvim;
         config = builtins.readFile ./telescope.lua;

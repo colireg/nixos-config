@@ -25,20 +25,3 @@ vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 vim.keymap.set('v', 'J', ':m \'>+1<CR>gv=gv')
 vim.keymap.set('v', 'K', ':m \'<-2<CR>gv=gv')
 
--- Obsidian
-require("obsidian").setup({
-    workspaces = {
-        {
-            name = "markdown",
-            path = "~/markdown",
-        }
-    },
-    disable_frontmatter = true,
-    ui = { enable = false }
-})
-vim.keymap.set('n', '<leader>.', vim.cmd.ObsidianToday)
-vim.keymap.set('n', '<leader>on', vim.cmd.ObsidianNew)
-vim.keymap.set('n', '<leader>of', vim.cmd.ObsidianQuickSwitch)
-vim.keymap.set('n', '<leader>os', vim.cmd.ObsidianSearch)
-vim.keymap.set('n', '<leader>ot', vim.cmd.ObsidianToday)
-vim.keymap.set('n', '<leader>ob', vim.cmd.ObsidianBacklinks)
