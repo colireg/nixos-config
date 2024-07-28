@@ -29,7 +29,7 @@
       };
 
       "org/gnome/desktop/wm/keybindings" = {
-        close = [ "<Super>w" ];
+        close = [ "<Shift><Super>Q" ];
         maximize = [ "<Super>k" ];
         minimize = mkEmptyArray type.string;
         move-to-workspace-1 = [ "<Shift><Super>1" ];
@@ -52,6 +52,7 @@
         switch-windows = [ "<Alt>Tab" ];
         switch-windows-backward = [ "<Shift><Alt>Tab" ];
         unmaximize = [ "<Super>j" ];
+        search = [ "<Super>d" ];
       };
 
       "org/gnome/desktop/wm/preferences" = {
