@@ -22,5 +22,6 @@
   environment.sessionVariables = {
     ZSH_TMUX_UNICODE = "true";
     ZSH_TMUX_DEFAULT_SESSION_NAME = "default";
+    ZSH_TMUX_AUTOSTART = "true";
   };
 }
