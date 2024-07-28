@@ -90,7 +90,10 @@
 
       "org/gnome/shell" = {
         disable-user-extensions = false;
-        enabled-extensions = [ "just-perfection-desktop@just-perfection" "unite@hardpixel.eu" ];
+        enabled-extensions = [
+          "just-perfection-desktop@just-perfection"
+          #"unite@hardpixel.eu"
+          ];
       };
 
       "org/gnome/shell/extensions/just-perfection" = {
@@ -99,13 +102,13 @@
         search = false;
       };
 
-      "org/gnome/shell/extensions/unite" = {
-        extend-left-box = false;
-        hide-window-titlebars = "always";
-        notifications-position = "center";
-        show-window-buttons = "never";
-        show-window-title = "never";
-      };
+      #"org/gnome/shell/extensions/unite" = {
+      #  extend-left-box = false;
+      #  hide-window-titlebars = "always";
+      #  notifications-position = "center";
+      #  show-window-buttons = "never";
+      #  show-window-title = "never";
+      #};
 
       "org/gnome/shell/keybindings" = {
         switch-to-application-1 = mkEmptyArray type.string;
