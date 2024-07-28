@@ -11,13 +11,26 @@
     let
       username = "matty";
       email = "mattyraud@gmail.com";
-    in
-    {
+    in {
       nixosConfigurations.tartarus = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs username email; };
         modules = [
           ./tartarus
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs username email; };
+            home-manager.users.matty = import ./matty;
+          }
+        ];
+      };
+      nixosConfigurations.hades = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs username email; };
+        modules = [
+          ./hades
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
