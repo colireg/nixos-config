@@ -24,7 +24,5 @@
     akregator # RSS reader
     konversation # IRC client
     neochat # Matrix client
-  ]) ++ (with pkgs; [
-    partition-manager
-  ]);
+  ]) ++ (with pkgs; [ partition-manager ]);
 }

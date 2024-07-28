@@ -4,34 +4,33 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules =
+    [ "xhci_pci" "nvme" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "nvme-pool/root";
-      fsType = "zfs";
-    };
+  fileSystems."/" = {
+    device = "nvme-pool/root";
+    fsType = "zfs";
+  };
 
-  fileSystems."/nix/store" =
-    { device = "nvme-pool/nix-store";
-      fsType = "zfs";
-    };
+  fileSystems."/nix/store" = {
+    device = "nvme-pool/nix-store";
+    fsType = "zfs";
+  };
 
-  fileSystems."/home" =
-    { device = "nvme-pool/home";
-      fsType = "zfs";
-    };
+  fileSystems."/home" = {
+    device = "nvme-pool/home";
+    fsType = "zfs";
+  };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/6D29-1134";
-      fsType = "vfat";
-    };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/6D29-1134";
+    fsType = "vfat";
+  };
 
   swapDevices = [ ];
 
@@ -45,5 +44,6 @@
   # networking.interfaces.wwp0s20f0u6i12.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.intel.updateMicrocode =
+    lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

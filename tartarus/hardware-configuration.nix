@@ -4,34 +4,40 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.initrd.availableKernelModules = [ "ehci_pci" "ahci" "xhci_pci" "usb_storage" "usbhid" "sd_mod" "rtsx_usb_sdmmc" ];
+  boot.initrd.availableKernelModules = [
+    "ehci_pci"
+    "ahci"
+    "xhci_pci"
+    "usb_storage"
+    "usbhid"
+    "sd_mod"
+    "rtsx_usb_sdmmc"
+  ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "ssd-pool/root";
-      fsType = "zfs";
-    };
+  fileSystems."/" = {
+    device = "ssd-pool/root";
+    fsType = "zfs";
+  };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/B8FC-B827";
-      fsType = "vfat";
-    };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/B8FC-B827";
+    fsType = "vfat";
+  };
 
-  fileSystems."/nix/store" =
-    { device = "ssd-pool/nix-store";
-      fsType = "zfs";
-    };
+  fileSystems."/nix/store" = {
+    device = "ssd-pool/nix-store";
+    fsType = "zfs";
+  };
 
-  fileSystems."/home" =
-    { device = "ssd-pool/home";
-      fsType = "zfs";
-    };
+  fileSystems."/home" = {
+    device = "ssd-pool/home";
+    fsType = "zfs";
+  };
 
   #fileSystems."/bulk" =
   #  { device = "/dev/disk/by-uuid/82cf0420-2655-4f52-939e-64f00e5e485b";
@@ -51,5 +57,6 @@
   # networking.interfaces.wlp3s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.intel.updateMicrocode =
+    lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

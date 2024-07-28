@@ -20,9 +20,10 @@
   };
 
   # Make shares visible for Windows 10 clients
-  services.samba-wsdd = { enable = true; openFirewall = true; };
-
- 
+  services.samba-wsdd = {
+    enable = true;
+    openFirewall = true;
+  };
 
   services.samba.shares.public = {
     path = "/home/${username}/public";

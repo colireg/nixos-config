@@ -18,41 +18,27 @@
   "editor.tabCompletion" = "on";
   "editor.acceptSuggestionOnEnter" = "off";
   "editor.acceptSuggestionOnCommitCharacter" = false;
-  "[javascript]" = {
-    "editor.defaultFormatter" = "esbenp.prettier-vscode";
-  };
-  "[json]" = {
-    "editor.defaultFormatter" = "esbenp.prettier-vscode";
-  };
+  "[javascript]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
+  "[json]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
   "editor.autoClosingBrackets" = "never";
   "editor.autoClosingComments" = "never";
   "editor.autoClosingQuotes" = "never";
   "editor.snippetSuggestions" = "top";
   "files.autoSave" = "onFocusChange";
   "git.suggestSmartCommit" = false;
-  "[typescript]" = {
-    "editor.defaultFormatter" = "esbenp.prettier-vscode";
-  };
-  "[handlebars]" = {
-    "editor.defaultFormatter" = "esbenp.prettier-vscode";
-  };
+  "[typescript]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
+  "[handlebars]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
   "workbench.editor.revealIfOpen" = false;
   "javascript.updateImportsOnFileMove.enabled" = "never";
   "vim.foldfix" = true;
-  "[css]" = {
-    "editor.defaultFormatter" = "vscode.css-language-features";
-  };
-  "[html]" = {
-    "editor.defaultFormatter" = "vscode.html-language-features";
-  };
+  "[css]" = { "editor.defaultFormatter" = "vscode.css-language-features"; };
+  "[html]" = { "editor.defaultFormatter" = "vscode.html-language-features"; };
   "remote.SSH.remotePlatform" = {
     "branch.tnds7y.colireg.upstream.codesandbox.csb" = "linux";
     "branch.qwdpq8.colireg.Inbox.main.csb" = "linux";
   };
   "codesandbox.currentWorkspace" = "833d6e5a-ed28-416d-89a0-bbd7387358cc";
-  "editor.codeActionsOnSave" = {
-    "source.fixAll.eslint" = "explicit";
-  };
+  "editor.codeActionsOnSave" = { "source.fixAll.eslint" = "explicit"; };
   "eslint.validate" = [ "javascript" ];
   "cSpell.userWords" = [
     "apikey"
@@ -100,9 +86,7 @@
   "eslint.experimental.useFlatConfig" = true;
   "eslint.format.enable" = true;
   "workbench.productIconTheme" = "adwaita";
-  "[jsonc]" = {
-    "editor.defaultFormatter" = "esbenp.prettier-vscode";
-  };
+  "[jsonc]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
   "workbench.editor.restoreViewState" = false;
   "window.restoreWindows" = "none";
   "update.showReleaseNotes" = false;

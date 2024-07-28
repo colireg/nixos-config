@@ -4,7 +4,8 @@
   programs.dconf.profiles.user.databases = [{
     settings = with lib.gvariant; {
       "org/gnome/desktop/input-sources" = {
-        sources = [ (mkTuple [ "xkb" "us" ]) (mkTuple [ "xkb" "ir+pes_keypad" ]) ];
+        sources =
+          [ (mkTuple [ "xkb" "us" ]) (mkTuple [ "xkb" "ir+pes_keypad" ]) ];
         xkb-options = [ "terminate:ctrl_alt_bksp" ];
       };
 
@@ -19,9 +20,7 @@
         monospace-font-name = "IntelOne Mono Medium 10";
       };
 
-      "org/gnome/desktop/peripherals/keyboard" = {
-        numlock-state = false;
-      };
+      "org/gnome/desktop/peripherals/keyboard" = { numlock-state = false; };
 
       "org/gnome/desktop/peripherals/touchpad" = {
         tap-to-click = true;
@@ -73,7 +72,9 @@
       };
 
       "org/gnome/settings-daemon/plugins/media-keys" = {
-        custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" ];
+        custom-keybindings = [
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+        ];
         next = [ "<Control><Super>Right" ];
         play = [ "<Control><Super>Down" ];
         previous = [ "<Control><Super>Left" ];
@@ -83,18 +84,19 @@
         volume-up = [ "<Super>F12" ];
       };
 
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-        binding = "<Super>Return";
-        command = "kgx -e tmux -u attach -t default";
-        name = "Open Console";
-      };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" =
+        {
+          binding = "<Super>Return";
+          command = "kgx -e tmux -u attach -t default";
+          name = "Open Console";
+        };
 
       "org/gnome/shell" = {
         disable-user-extensions = false;
         enabled-extensions = [
           "just-perfection-desktop@just-perfection"
           #"unite@hardpixel.eu"
-          ];
+        ];
       };
 
       "org/gnome/shell/extensions/just-perfection" = {
@@ -121,5 +123,3 @@
     };
   }];
 }
-
-

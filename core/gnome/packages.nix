@@ -1,20 +1,19 @@
 { pkgs, ... }:
 
 {
-  environment.gnome.excludePackages = (with pkgs; [
-    gnome-tour
-  ]) ++ (with pkgs.gnome; [
-    cheese # webcam tool
-    gnome-music
-    gnome-maps
-    gnome-characters
-    epiphany # web browser
-    totem # video player
-    tali # poker game
-    iagno # go game
-    hitori # sudoku game
-    atomix # puzzle game
-  ]);
+  environment.gnome.excludePackages = (with pkgs; [ gnome-tour ])
+    ++ (with pkgs.gnome; [
+      cheese # webcam tool
+      gnome-music
+      gnome-maps
+      gnome-characters
+      epiphany # web browser
+      totem # video player
+      tali # poker game
+      iagno # go game
+      hitori # sudoku game
+      atomix # puzzle game
+    ]);
 
   environment.systemPackages = (with pkgs; [
     foliate # EPUB reader
@@ -23,7 +22,5 @@
     gnome.gucharmap # Character map
     gnome-solanum # Pomodoro timer
     newsflash # RSS reader
-  ]) ++ (with pkgs.gnomeExtensions; [
-    just-perfection
-  ]);
+  ]) ++ (with pkgs.gnomeExtensions; [ just-perfection ]);
 }
