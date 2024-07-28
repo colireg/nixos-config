@@ -100,6 +100,7 @@
       "org/gnome/shell/extensions/just-perfection" = {
         dash = false;
         panel = false;
+        panel-in-overview = true;
         search = false;
       };
 
