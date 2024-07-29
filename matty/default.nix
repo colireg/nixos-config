@@ -7,7 +7,6 @@
 
     ../home/gtk.nix
     ../home/nvim
-    ../home/tmux.nix
     ../home/vscode
   ];
 
