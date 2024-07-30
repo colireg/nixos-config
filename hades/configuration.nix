@@ -54,6 +54,7 @@
     lsof
     restic
     lua5_4
+    socat
 
     nixfmt
     nixd
