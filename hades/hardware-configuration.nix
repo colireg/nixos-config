@@ -17,16 +17,6 @@
     fsType = "zfs";
   };
 
-  fileSystems."/nix/store" = {
-    device = "nvme-pool/nix-store";
-    fsType = "zfs";
-  };
-
-  fileSystems."/home" = {
-    device = "nvme-pool/home";
-    fsType = "zfs";
-  };
-
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/6D29-1134";
     fsType = "vfat";
