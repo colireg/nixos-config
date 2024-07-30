@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
   home.packages = (with pkgs; [
@@ -15,10 +15,10 @@
     tor-browser-bundle-bin
     obsidian
     imhex
-    zed-editor
     logseq
-
     # Tools
     hunspell # Spell check for LibreOffice
+  ]) ++ (with pkgs-unstable; [
+    zed-editor
   ]);
 }
