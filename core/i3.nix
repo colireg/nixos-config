@@ -7,9 +7,10 @@
   services.gnome.gnome-keyring.enable = true;
   services.xserver = {
     enable = true;
-    displayManager = {
-      lightdm.enable = true;
-      lightdm.greeters.gtk = {
+    displayManager.lightdm = {
+      background = "#000000";
+      enable = true;
+      greeters.gtk = {
         enable = true;
         theme.name = "Arc-Dark";
         theme.package = pkgs.arc-theme;
