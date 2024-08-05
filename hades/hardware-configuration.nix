@@ -27,6 +27,11 @@
     fsType = "zfs";
   };
 
+  fileSystems."/home/matty/dev" = {
+    device = "nvme-pool/dev";
+    fsType = "zfs";
+  };
+
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/6D29-1134";
     fsType = "vfat";
