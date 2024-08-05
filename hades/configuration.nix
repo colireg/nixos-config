@@ -14,8 +14,8 @@
     ../core/console.nix
     ../core/fonts.nix
     ../core/git.nix
-    ../core/gnome
-    #../core/i3.nix
+    #../core/gnome
+    ../core/i3.nix
     ../core/gnupg.nix
     ../core/syncthing.nix
     ../core/tmux.nix
@@ -29,6 +29,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
+
+  programs.nix-ld.enable = true;
+
+
 
   networking.hostName = "hades";
   networking.nftables.enable = true;
