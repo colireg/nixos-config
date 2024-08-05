@@ -5,7 +5,7 @@ lsp_zero.on_attach(function(client, bufnr)
 end)
 
 require('lspconfig').tsserver.setup({})
-require('lspconfig').elixirls.setup({})
+require('lspconfig').elixirls.setup({ cmd = {'elixir-ls'} })
 require('lspconfig').pyright.setup({})
 require('lspconfig').rust_analyzer.setup({})
 require('lspconfig').lua_ls.setup({})
