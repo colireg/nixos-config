@@ -17,7 +17,5 @@
     logseq
     # Tools
     hunspell # Spell check for LibreOffice
-  ]) ++ (with pkgs-unstable; [
-    zed-editor
-  ]);
+  ]) ++ (with pkgs-unstable; [ zed-editor ]);
 }
