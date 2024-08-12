@@ -9,7 +9,6 @@
     qbittorrent
     libreoffice
     gimp
-    discord
     telegram-desktop
     chromium
     tor-browser-bundle-bin
