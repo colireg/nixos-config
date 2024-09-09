@@ -1,14 +1,27 @@
-{ ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
-  imports = [
-    ./env.nix
-    ./packages.nix
+  imports = [ ../home/gtk.nix ../home/nvim ../home/vscode ];
 
-    ../home/gtk.nix
-    ../home/nvim
-    ../home/vscode
-  ];
+  home.packages = (with pkgs; [
+    # Gui
+    vlc
+    qbittorrent
+    libreoffice
+    gimp
+    telegram-desktop
+    chromium
+    tor-browser-bundle-bin
+    obsidian
+    imhex
+    anki
+    firefox
+    remmina
+    # Tools
+    hunspell # Spell check for LibreOffice
+    okular
+    dolphin
+  ]) ++ (with pkgs-unstable; [ zed-editor ]);
 
   # For bluetooth
   services.mpris-proxy.enable = true;
