@@ -16,6 +16,7 @@
     ../core/git.nix
     #../core/gnome
     ../core/i3.nix
+    #../core/sway.nix
     ../core/gnupg.nix
     ../core/syncthing.nix
     ../core/tmux.nix
