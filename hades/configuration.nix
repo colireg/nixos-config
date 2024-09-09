@@ -31,10 +31,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
 
-  programs.nix-ld.enable = true;
-
-
-
   networking.hostName = "hades";
   networking.nftables.enable = true;
   networking.wireless.iwd.enable = true;
@@ -72,6 +68,9 @@
       [ "networkmanager" "wheel" "libvirtd" "docker" "tor" "incus-admin" ];
   };
   nix.settings.trusted-users = [ "matty" ];
+
+  programs.nix-ld.enable = true;
+  #programs.nix-ld.libraries = with pkgs; [ zlib libssl ];
 
   services.zfs.autoScrub.enable = true;
   nixpkgs.config.allowUnfree = true;
