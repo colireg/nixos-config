@@ -62,12 +62,8 @@
 
     nixfmt
     nixd
-    statix
-    vulnix
   ];
   programs.htop.enable = true;
-  programs.fzf.fuzzyCompletion = true;
-  programs.fzf.keybindings = true;
 
   users.users.matty = {
     isNormalUser = true;
