@@ -7,12 +7,14 @@
     enableCompletion = true;
     autosuggestions.enable = true;
     autosuggestions.strategy = [ "completion" ];
-    promptInit = ''PROMPT="%{$fg[green]%}%%%{$reset_color%} "'';
+    shellInit = ''
+      bindkey '^[[A' fzf-history-widget
+    '';
   };
   programs.zsh.ohMyZsh = {
     enable = true;
     theme = "imajes";
-    plugins = [ "sudo" "git" "vi-mode" "tmux" ];
+    plugins = [ "sudo" "git" "tmux" ];
   };
   environment.shells = [ pkgs.zsh ];
   users.defaultUserShell = pkgs.zsh;
@@ -24,4 +26,13 @@
     ZSH_TMUX_DEFAULT_SESSION_NAME = "default";
     ZSH_TMUX_AUTOSTART = "true";
   };
+
+  programs.fzf.fuzzyCompletion = true;
+  programs.fzf.keybindings = true;
+
+  environment.systemPackages = with pkgs; [ nix-index ];
+  programs.command-not-found.enable = false;
+  programs.zsh.interactiveShellInit = ''
+    source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
+  '';
 }
