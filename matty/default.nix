@@ -19,8 +19,10 @@
     remmina
     # Tools
     hunspell # Spell check for LibreOffice
-    okular
-    dolphin
+    evince
+    xarchiver
+    mpv
+    papirus-icon-theme
   ]) ++ (with pkgs-unstable; [ zed-editor ]);
 
   # For bluetooth
