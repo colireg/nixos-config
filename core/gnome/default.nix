@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -9,21 +9,9 @@
     enable = true;
     desktopManager.gnome.enable = true;
     displayManager.gdm.enable = true;
+    displayManager.gdm.wayland = true;
+    displayManager.defaultSession = "gnome";
   };
-
-  environment.gnome.excludePackages = (with pkgs; [ gnome-tour ])
-    ++ (with pkgs.gnome; [
-      cheese # webcam tool
-      gnome-music
-      gnome-maps
-      gnome-characters
-      epiphany # web browser
-      totem # video player
-      tali # poker game
-      iagno # go game
-      hitori # sudoku game
-      atomix # puzzle game
-    ]);
 
   environment.systemPackages = (with pkgs; [
     foliate # EPUB reader
@@ -34,4 +22,9 @@
     newsflash # RSS reader
   ]);
 
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1"; # VSCode wayland
+    MOZ_ENABLE_WAYLAND = "1"; # Firefox wayland
+    ELECTRON_OZONE_PLATFORM_HINT = "auto";
+  };
 }
