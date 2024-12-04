@@ -1,9 +1,6 @@
 { pkgs, ... }:
 
 {
-  imports = [
-    #./dconf.nix
-  ];
 
   services.displayManager.defaultSession = "gnome";
 

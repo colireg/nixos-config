@@ -2,9 +2,7 @@
 
 {
   imports = [
-    ../home/gtk.nix
     ../home/nvim
-    ../home/vscode
   ];
 
   home.packages =
@@ -26,12 +24,18 @@
       evince
       mpv
       papirus-icon-theme
+      emacs-gtk
     ])
     ++ (with pkgs-unstable; [
       zed-editor
       requestly
       qbittorrent
     ]);
+
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscode-fhs;
+  };
 
   # For bluetooth
   services.mpris-proxy.enable = true;

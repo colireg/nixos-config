@@ -8,7 +8,6 @@
     extraPackages = with pkgs; [
       rust-analyzer
       lua-language-server
-      nodePackages.typescript-language-server
       nixd
       xclip
       pyright

@@ -3,24 +3,15 @@
 {
   imports = [
     ./hardware-configuration.nix
-
-    #../core/postgresql.nix
     ../core/virtualization.nix
-    ../core/emacs.nix
-    #../modules/core/samba.nix
     ../core/bluetooth.nix
-    ../core/console.nix
     ../core/fonts.nix
     ../core/git.nix
-    ../core/gnome
-    # ../core/i3.nix
-    #../core/sway.nix
-    ../core/gnupg.nix
+    ../core/gnome.nix
     ../core/syncthing.nix
     ../core/tmux.nix
     ../core/tor.nix
     ../core/nvim.nix
-    ../core/xdg.nix
     ../core/zsh.nix
   ];
 
@@ -80,9 +71,14 @@
   };
   nix.settings.trusted-users = [ "matty" ];
 
+  services.pcscd.enable = true;
+  programs.gnupg.agent.enable = true;
+
   security.pki.certificateFiles = [ /cert/mitmproxy-ca-cert.pem ];
   programs.nix-ld.enable = true;
   services.zfs.autoScrub.enable = true;
+
+  console.earlySetup = true;
 
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [
