@@ -14,14 +14,17 @@
     displayManager.gdm.wayland = true;
   };
 
-  environment.systemPackages = (with pkgs; [
-    foliate # EPUB reader
-    gnome-epub-thumbnailer # EPUB thumbnailer for Nautilous
-    gnome-tweaks
-    gucharmap # Character map
-    gnome-solanum # Pomodoro timer
-    newsflash # RSS reader
-  ]);
+  environment.systemPackages = (
+    with pkgs;
+    [
+      foliate # EPUB reader
+      gnome-epub-thumbnailer # EPUB thumbnailer for Nautilous
+      gnome-tweaks
+      gucharmap # Character map
+      gnome-solanum # Pomodoro timer
+      newsflash # RSS reader
+    ]
+  );
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1"; # VSCode wayland

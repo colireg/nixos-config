@@ -31,7 +31,10 @@
 
   services.xserver.enable = true;
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
   time.timeZone = "Asia/Tehran";
   i18n.defaultLocale = "en_US.UTF-8";

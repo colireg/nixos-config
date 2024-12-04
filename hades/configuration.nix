@@ -24,7 +24,10 @@
     ../core/zsh.nix
   ];
 
-  boot.supportedFilesystems = [ "ntfs" "zfs" ];
+  boot.supportedFilesystems = [
+    "ntfs"
+    "zfs"
+  ];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.zfs.allowHibernation = true;
@@ -66,8 +69,14 @@
 
   users.users.matty = {
     isNormalUser = true;
-    extraGroups =
-      [ "networkmanager" "wheel" "libvirtd" "docker" "tor" "incus-admin" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "libvirtd"
+      "docker"
+      "tor"
+      "incus-admin"
+    ];
   };
   nix.settings.trusted-users = [ "matty" ];
 
@@ -76,7 +85,10 @@
   services.zfs.autoScrub.enable = true;
 
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   time.timeZone = "Asia/Tehran";
   i18n.defaultLocale = "en_US.UTF-8";
   zramSwap.enable = true;
