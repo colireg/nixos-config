@@ -6,7 +6,6 @@
   home.packages = (with pkgs; [
     # Gui
     vlc
-    qbittorrent
     libreoffice
     gimp
     telegram-desktop
@@ -20,10 +19,9 @@
     # Tools
     hunspell # Spell check for LibreOffice
     evince
-    xarchiver
     mpv
     papirus-icon-theme
-  ]) ++ (with pkgs-unstable; [ zed-editor ]);
+  ]) ++ (with pkgs-unstable; [ zed-editor requestly qbittorrent ]);
 
   # For bluetooth
   services.mpris-proxy.enable = true;
