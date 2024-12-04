@@ -11,11 +11,6 @@
       bindkey '^[[A' fzf-history-widget
     '';
   };
-  programs.zsh.ohMyZsh = {
-    enable = true;
-    theme = "imajes";
-    plugins = [ "sudo" "git" "tmux" ];
-  };
   environment.shells = [ pkgs.zsh ];
   users.defaultUserShell = pkgs.zsh;
 
@@ -24,7 +19,6 @@
   environment.sessionVariables = {
     ZSH_TMUX_UNICODE = "true";
     ZSH_TMUX_DEFAULT_SESSION_NAME = "default";
-    ZSH_TMUX_AUTOSTART = "true";
   };
 
   programs.fzf.fuzzyCompletion = true;
