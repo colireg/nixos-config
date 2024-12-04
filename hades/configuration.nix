@@ -54,8 +54,11 @@
     jcal
     lsof
     restic
-    lua5_4
+    elixir
+    elixir-ls
     socat
+    mitmproxy
+    tealdeer
 
     nixfmt
     nixd
@@ -68,6 +71,8 @@
       [ "networkmanager" "wheel" "libvirtd" "docker" "tor" "incus-admin" ];
   };
   nix.settings.trusted-users = [ "matty" ];
+
+  security.pki.certificateFiles = [ /cert/mitmproxy-ca-cert.pem ];
 
   programs.nix-ld.enable = true;
   #programs.nix-ld.libraries = with pkgs; [ zlib libssl ];
