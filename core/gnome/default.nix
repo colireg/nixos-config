@@ -5,19 +5,20 @@
     #./dconf.nix
   ];
 
+  services.displayManager.defaultSession = "gnome";
+
   services.xserver = {
     enable = true;
     desktopManager.gnome.enable = true;
     displayManager.gdm.enable = true;
     displayManager.gdm.wayland = true;
-    displayManager.defaultSession = "gnome";
   };
 
   environment.systemPackages = (with pkgs; [
     foliate # EPUB reader
     gnome-epub-thumbnailer # EPUB thumbnailer for Nautilous
-    gnome.gnome-tweaks
-    gnome.gucharmap # Character map
+    gnome-tweaks
+    gucharmap # Character map
     gnome-solanum # Pomodoro timer
     newsflash # RSS reader
   ]);

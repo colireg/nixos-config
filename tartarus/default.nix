@@ -37,5 +37,5 @@
   i18n.defaultLocale = "en_US.UTF-8";
   sound.enable = true;
   zramSwap.enable = true;
-  system.stateVersion = "24.05";
+  system.stateVersion = "24.11";
 }

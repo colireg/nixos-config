@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -9,8 +9,6 @@
     ../core/emacs.nix
     #../modules/core/samba.nix
     ../core/bluetooth.nix
-    ../core/audio.nix
-    #../core/zfs.nix
     ../core/console.nix
     ../core/fonts.nix
     ../core/git.nix
@@ -29,7 +27,8 @@
   boot.supportedFilesystems = [ "ntfs" "zfs" ];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
+  boot.zfs.allowHibernation = true;
+  boot.zfs.forceImportRoot = false;
 
   networking.hostName = "hades";
   networking.nftables.enable = true;
@@ -60,7 +59,7 @@
     mitmproxy
     tealdeer
 
-    nixfmt
+    nixfmt-rfc-style
     nixd
   ];
   programs.htop.enable = true;
@@ -73,16 +72,13 @@
   nix.settings.trusted-users = [ "matty" ];
 
   security.pki.certificateFiles = [ /cert/mitmproxy-ca-cert.pem ];
-
   programs.nix-ld.enable = true;
-  #programs.nix-ld.libraries = with pkgs; [ zlib libssl ];
-
   services.zfs.autoScrub.enable = true;
+
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   time.timeZone = "Asia/Tehran";
   i18n.defaultLocale = "en_US.UTF-8";
-  sound.enable = true;
   zramSwap.enable = true;
-  system.stateVersion = "24.05";
+  system.stateVersion = "24.11";
 }
