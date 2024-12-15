@@ -49,6 +49,8 @@
     restic
     elixir
     elixir-ls
+    erlang
+    erlang-ls
     socat
     mitmproxy
     tealdeer
