@@ -12,24 +12,16 @@
       nixpkgs-unstable,
       ...
     }:
-    let
-      username = "matty";
-      email = "mattyraud@gmail.com";
-      pkgs-unstable = import nixpkgs-unstable {
-        system = "x86_64-linux";
-        config.allowUnfree = true;
-      };
-    in
     {
       nixosConfigurations.hades = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {
-          inherit
-            inputs
-            username
-            email
-            pkgs-unstable
-            ;
+          username = "matty";
+          email = "mattyraud@gmail.com";
+          pkgs-unstable = import nixpkgs-unstable {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
         };
         modules = [
           ./configuration.nix

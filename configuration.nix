@@ -253,6 +253,8 @@ lib.mkMerge [
         "tor"
       ];
     };
+    nix.settings.trusted-users = [ username ];
+  }
   {
     # Stable user packages
     users.users.${username}.packages = with pkgs; [
