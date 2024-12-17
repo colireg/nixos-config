@@ -253,7 +253,36 @@ lib.mkMerge [
         "tor"
       ];
     };
-    nix.settings.trusted-users = [ "matty" ];
+  {
+    # Stable user packages
+    users.users.${username}.packages = with pkgs; [
+      # Gui
+      vlc
+      libreoffice
+      gimp
+      telegram-desktop
+      chromium
+      tor-browser-bundle-bin
+      obsidian
+      imhex
+      anki
+      firefox
+      remmina
+      # Tools
+      hunspell # Spell check for LibreOffice
+      evince
+      mpv
+      papirus-icon-theme
+      emacs-gtk
+      vscode-fhs
+    ];
+  }
+  {
+    # Unstable user packages
+    users.users.${username}.packages = with pkgs; [
+      zed-editor
+      qbittorrent
+    ];
   }
   {
     # Nix
