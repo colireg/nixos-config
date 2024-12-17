@@ -24,34 +24,6 @@
       };
     in
     {
-      nixosConfigurations.tartarus = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {
-          inherit
-            inputs
-            username
-            email
-            pkgs-unstable
-            ;
-        };
-        modules = [
-          ./tartarus
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = {
-              inherit
-                inputs
-                username
-                email
-                pkgs-unstable
-                ;
-            };
-            home-manager.users.matty = import ./matty;
-          }
-        ];
-      };
       nixosConfigurations.hades = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {
