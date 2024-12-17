@@ -28,7 +28,6 @@
     ])
     ++ (with pkgs-unstable; [
       zed-editor
-      requestly
       qbittorrent
     ]);
 
