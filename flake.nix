@@ -35,7 +35,7 @@
             ;
         };
         modules = [
-          ./hades
+          ./configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -48,7 +48,7 @@
                 pkgs-unstable
                 ;
             };
-            home-manager.users.matty = import ./matty;
+            home-manager.users.${username} = import ./home.nix;
           }
         ];
       };

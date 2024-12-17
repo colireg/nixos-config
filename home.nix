@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../home/nvim
+    ./nvim
   ];
 
   home.packages =
