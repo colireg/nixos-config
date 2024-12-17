@@ -33,11 +33,6 @@
         type = "lua";
       }
       {
-        plugin = dracula-nvim;
-        config = builtins.readFile ./dracula.lua;
-        type = "lua";
-      }
-      {
         plugin = nvim-treesitter.withAllGrammars;
         config = builtins.readFile ./treesitter.lua;
         type = "lua";
