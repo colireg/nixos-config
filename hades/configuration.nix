@@ -43,18 +43,17 @@
     ncdu # disk usage
     duf
     jq
-    nnn
     jcal
     lsof
     restic
-    elixir
-    elixir-ls
-    erlang
-    erlang-ls
     socat
     mitmproxy
     tealdeer
 
+    elixir
+    elixir-ls
+    erlang
+    erlang-ls
     nixfmt-rfc-style
     nixd
   ];
