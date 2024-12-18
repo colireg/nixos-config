@@ -35,6 +35,7 @@ lib.mkMerge [
         DNSPort = 9053;
       };
     };
+    users.users.${username}.extraGroups = [ "tor" ];
   }
   {
     # Neovim
@@ -250,7 +251,6 @@ lib.mkMerge [
       extraGroups = [
         "wheel"
         "docker"
-        "tor"
       ];
     };
     nix.settings.trusted-users = [ username ];
