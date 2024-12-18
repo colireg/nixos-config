@@ -17,7 +17,6 @@
         system = "x86_64-linux";
         specialArgs = {
           username = "matty";
-          email = "mattyraud@gmail.com";
           pkgs-unstable = import nixpkgs-unstable {
             system = "x86_64-linux";
             config.allowUnfree = true;

@@ -2,7 +2,6 @@
   pkgs,
   lib,
   username,
-  email,
   ...
 }:
 
@@ -106,24 +105,6 @@ lib.mkMerge [
       NIXOS_OZONE_WL = "1"; # VSCode wayland
       MOZ_ENABLE_WAYLAND = "1"; # Firefox wayland
       ELECTRON_OZONE_PLATFORM_HINT = "auto";
-    };
-  }
-
-  {
-    # Git
-    programs.git = {
-      enable = true;
-      lfs.enable = true;
-      config = {
-        init.defaultBranch = "main";
-        core.fileMode = false;
-        core.pager = "cat";
-        merge.tool = "vimdiff";
-        user.signingkey = email;
-        commit.gpgsign = true;
-        user.name = username;
-        user.email = email;
-      };
     };
   }
   {
@@ -231,6 +212,10 @@ lib.mkMerge [
     programs.htop.enable = true;
     programs.gnupg.agent.enable = true;
     security.pki.certificateFiles = [ /cert/mitmproxy-ca-cert.pem ];
+    programs.git = {
+      enable = true;
+      lfs.enable = true;
+    };
   }
   {
     # Users
