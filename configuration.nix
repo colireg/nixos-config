@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-unstable,
   lib,
   username,
   ...
@@ -248,15 +249,15 @@ lib.mkMerge [
       evince
       mpv
       papirus-icon-theme
-      emacs-gtk
       vscode-fhs
+      qbittorrent
+      emacs-gtk
     ];
   }
   {
     # Unstable user packages
-    users.users.${username}.packages = with pkgs; [
+    users.users.${username}.packages = with pkgs-unstable; [
       zed-editor
-      qbittorrent
     ];
   }
   {
