@@ -190,6 +190,7 @@ lib.mkMerge [
       erlang-ls
       nixfmt-rfc-style
       nixd
+      nodejs_20
     ];
     programs.htop.enable = true;
     programs.gnupg.agent.enable = true;
