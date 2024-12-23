@@ -50,26 +50,6 @@ lib.mkMerge [
     };
   }
   {
-    # Shell
-    programs.zsh.enable = true;
-    environment.shells = [ pkgs.zsh ];
-    users.defaultUserShell = pkgs.zsh;
-
-    # Get completion for system packages for zsh
-    environment.pathsToLink = [ "/share/zsh" ];
-
-    environment.systemPackages = with pkgs; [
-      nix-index
-      fzf
-    ];
-
-    programs.command-not-found.enable = false;
-    programs.zsh.interactiveShellInit = ''
-      source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
-    '';
-  }
-
-  {
     # Syncthing
     services.syncthing = {
       enable = true;
@@ -202,6 +182,7 @@ lib.mkMerge [
       socat
       mitmproxy
       tealdeer
+      fzf
 
       elixir
       elixir-ls
