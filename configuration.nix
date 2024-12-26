@@ -174,6 +174,8 @@ lib.mkMerge [
     };
     programs.neovim.enable = true;
     programs.neovim.defaultEditor = true;
+    programs.adb.enable = true;
+    users.users.${username}.extraGroups = [ "adbusers" ];
     programs.tmux.enable = true;
   }
   {
