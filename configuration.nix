@@ -22,18 +22,6 @@ lib.mkMerge [
     users.users.${username}.extraGroups = [ "tor" ];
   }
   {
-    # Neovim
-    programs.neovim = {
-      enable = true;
-      defaultEditor = true;
-      configure.customRC = ''
-        set nowrap
-        set number
-        set relativenumber
-      '';
-    };
-  }
-  {
     # Syncthing
     services.syncthing = {
       enable = true;
@@ -175,6 +163,7 @@ lib.mkMerge [
       nixfmt-rfc-style
       nixd
       nodejs_20
+      gcc
     ];
     programs.htop.enable = true;
     programs.gnupg.agent.enable = true;
@@ -183,6 +172,8 @@ lib.mkMerge [
       enable = true;
       lfs.enable = true;
     };
+    programs.neovim.enable = true;
+    programs.neovim.defaultEditor = true;
     programs.tmux.enable = true;
   }
   {
