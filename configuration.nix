@@ -102,6 +102,9 @@ lib.mkMerge [
       "libvirtd"
       "incus-admin"
     ];
+    environment.systemPackages = with pkgs; [
+      virt-viewer
+    ];
   }
   {
     # Boot
@@ -200,7 +203,6 @@ lib.mkMerge [
       hunspell # Spell check for LibreOffice
       evince
       mpv
-      papirus-icon-theme
       vscode-fhs
       qbittorrent
       emacs-gtk
