@@ -164,6 +164,7 @@ lib.mkMerge [
       nixd
       nodejs_20
       gcc
+      nvimpager
     ];
     programs.htop.enable = true;
     programs.gnupg.agent.enable = true;
@@ -173,7 +174,6 @@ lib.mkMerge [
       lfs.enable = true;
     };
     programs.neovim.enable = true;
-    programs.neovim.defaultEditor = true;
     programs.adb.enable = true;
     users.users.${username}.extraGroups = [ "adbusers" ];
     programs.tmux.enable = true;
