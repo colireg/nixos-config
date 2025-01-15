@@ -53,6 +53,8 @@ lib.mkMerge [
     ]) ++ (with pkgs.xfce; [
       xfce4-clipman-plugin
       xfce4-xkb-plugin
+      xfwm4-themes
+      xfce4-icon-theme
     ]);
   }
   {
@@ -134,39 +136,30 @@ lib.mkMerge [
     users.users.${username}.extraGroups = [ "networkmanager" ];
   }
   {
-    # Packages
+    # System Packages
     environment.systemPackages = with pkgs; [
       wget
       openssh
       zip
       unzip
-      parted
-      bat # cat
       ripgrep
       ncdu # disk usage
-      duf
       jq
       jcal
       lsof
-      restic
-      socat
-      mitmproxy
       tealdeer
       fzf
       xclip # for tmux
-      elixir
-      elixir-ls
-      erlang
-      erlang-ls
       nixfmt-rfc-style
       nixd
       nodejs_20
       gcc
       nvimpager
+      trash-cli
+      lnch
     ];
     programs.htop.enable = true;
     programs.gnupg.agent.enable = true;
-    security.pki.certificateFiles = [ /cert/mitmproxy-ca-cert.pem ];
     programs.git = {
       enable = true;
       lfs.enable = true;
@@ -191,17 +184,14 @@ lib.mkMerge [
     # Stable user packages
     users.users.${username}.packages = with pkgs; [
       # Gui
-      vlc
       libreoffice
       gimp
       telegram-desktop
       chromium
       tor-browser-bundle-bin
       obsidian
-      imhex
       anki
       firefox
-      remmina
       # Tools
       hunspell # Spell check for LibreOffice
       evince
