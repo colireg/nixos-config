@@ -201,6 +201,7 @@ lib.mkMerge [
       emacs-gtk
       xarchiver
       foliate
+      minetest
     ];
   }
   {
