@@ -26,7 +26,7 @@ lib.mkMerge [
     services.syncthing = {
       enable = true;
       user = username;
-      dataDir = "/home/${username}/Public";
+      dataDir = "/home/${username}/syncthing";
     };
     networking.firewall.allowedTCPPorts = [ 22000 ];
     networking.firewall.allowedUDPPorts = [
