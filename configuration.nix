@@ -47,15 +47,17 @@ lib.mkMerge [
     security.pam.services.gdm.enableGnomeKeyring = true;
     services.gnome.gnome-keyring.enable = true;
     services.libinput.touchpad.naturalScrolling = true;
-    environment.systemPackages = (with pkgs; [
-      arc-theme
-      papirus-icon-theme
-    ]) ++ (with pkgs.xfce; [
-      xfce4-clipman-plugin
-      xfce4-xkb-plugin
-      xfwm4-themes
-      xfce4-icon-theme
-    ]);
+    environment.systemPackages =
+      (with pkgs; [
+        arc-theme
+        papirus-icon-theme
+      ])
+      ++ (with pkgs.xfce; [
+        xfce4-clipman-plugin
+        xfce4-xkb-plugin
+        xfwm4-themes
+        xfce4-icon-theme
+      ]);
   }
   {
     # Font
