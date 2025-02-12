@@ -154,8 +154,6 @@ lib.mkMerge [
       xclip # for tmux
       nixfmt-rfc-style
       nixd
-      nodejs_20
-      gcc
       nvimpager
       trash-cli
       lnch
@@ -170,6 +168,7 @@ lib.mkMerge [
     programs.adb.enable = true;
     users.users.${username}.extraGroups = [ "adbusers" ];
     programs.tmux.enable = true;
+    services.ollama.enable = true;
   }
   {
     # Users
@@ -204,6 +203,13 @@ lib.mkMerge [
       xarchiver
       foliate
       minetest
+      # Dev
+      nodejs_20
+      clang
+      clang-tools
+      ghc
+      haskellPackages.haskell-language-server
+      dotnet-sdk_9
     ];
   }
   {
