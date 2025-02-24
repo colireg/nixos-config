@@ -157,6 +157,7 @@ lib.mkMerge [
       nvimpager
       trash-cli
       lnch
+      restic
     ];
     programs.htop.enable = true;
     programs.gnupg.agent.enable = true;
