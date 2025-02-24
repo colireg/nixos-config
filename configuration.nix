@@ -209,7 +209,7 @@ lib.mkMerge [
       clang-tools
       ghc
       haskellPackages.haskell-language-server
-      dotnet-sdk_9
+
     ];
   }
   {
@@ -226,6 +226,27 @@ lib.mkMerge [
       "flakes"
     ];
     programs.nix-ld.enable = true;
+  }
+  {
+    # DotNet
+    users.users.${username}.packages = with pkgs; [
+      omnisharp-roslyn
+      dotnet-sdk_9
+      dotnet-ef
+      (buildDotnetGlobalTool {
+        pname = "dotnet-script";
+        version = "1.6.0";
+        nugetHash = "sha256-R2z02Orakl6T7nfmNLr3HSbBS2yxFhWRP1imy9B+Tqo=";
+        dotnet-sdk = dotnet-sdk_9;
+        dotnet-runtime = dotnet-sdk_9;
+        meta = with lib; {
+          homepage = "https://github.com/dotnet-script/dotnet-script";
+          changelog = "https://github.com/dotnet-script/dotnet-script/releases";
+          license = licenses.mit;
+          platforms = platforms.linux;
+        };
+      })
+    ];
   }
   {
     # Misc
