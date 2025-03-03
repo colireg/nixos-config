@@ -210,7 +210,6 @@ lib.mkMerge [
       clang-tools
       ghc
       haskellPackages.haskell-language-server
-
     ];
   }
   {
