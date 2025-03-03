@@ -231,15 +231,26 @@ lib.mkMerge [
   {
     # DotNet
     users.users.${username}.packages = with pkgs; [
-      omnisharp-roslyn
-      dotnet-sdk_9
-      dotnet-ef
+      dotnet-sdk_8
+      dotnet-runtime_8
+      (buildDotnetGlobalTool {
+        pname = "dotnet-ef";
+        version = "8.0.13";
+        dotnet-runtime = dotnet-runtime_8;
+        dotnet-sdk = dotnet-sdk_8;
+        nugetSha256 = "sha256-e0F66RCatV6fZzXO3VILyG3R2lwub7DIZGE6rGM5TMc=";
+        meta = {
+          homepage = "https://docs.microsoft.com/ef/core/";
+          license = lib.licenses.mit;
+          platforms = lib.platforms.linux;
+        };
+      })
       (buildDotnetGlobalTool {
         pname = "dotnet-script";
         version = "1.6.0";
         nugetHash = "sha256-R2z02Orakl6T7nfmNLr3HSbBS2yxFhWRP1imy9B+Tqo=";
-        dotnet-sdk = dotnet-sdk_9;
-        dotnet-runtime = dotnet-sdk_9;
+        dotnet-sdk = dotnet-sdk_8;
+        dotnet-runtime = dotnet-sdk_8;
         meta = with lib; {
           homepage = "https://github.com/dotnet-script/dotnet-script";
           changelog = "https://github.com/dotnet-script/dotnet-script/releases";
