@@ -194,8 +194,9 @@ lib.mkMerge [
       chromium
       tor-browser-bundle-bin
       obsidian
+      apostrophe
       anki
-      firefox
+      librewolf
       # Tools
       hunspell # Spell check for LibreOffice
       evince
