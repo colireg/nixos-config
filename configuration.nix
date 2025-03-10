@@ -50,7 +50,9 @@ lib.mkMerge [
     environment.systemPackages =
       (with pkgs; [
         arc-theme
-        papirus-icon-theme
+        gruvbox-gtk-theme
+        gruvbox-plus-icons
+        gruvbox-dark-gtk
       ])
       ++ (with pkgs.xfce; [
         xfce4-clipman-plugin
