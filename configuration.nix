@@ -194,7 +194,6 @@ lib.mkMerge [
       chromium
       tor-browser-bundle-bin
       obsidian
-      apostrophe
       anki
       librewolf
       # Tools
@@ -211,6 +210,7 @@ lib.mkMerge [
       nodejs_20
       clang
       clang-tools
+      go
       ghc
       haskellPackages.haskell-language-server
     ];
