@@ -156,6 +156,7 @@ lib.mkMerge [
       xclip # for tmux
       nixfmt-rfc-style
       nixd
+      lazygit
       nvimpager
       trash-cli
       lnch
